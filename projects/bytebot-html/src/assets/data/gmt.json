@@ -1,0 +1,151 @@
+[
+    {
+        "view":"(UTC-11:00) Midway, Niue, Pago Pago",
+        "gmt":"-11:00"
+    },
+    {
+        "view":"(UTC-10:00) Honolulu, Tahiti",
+        "gmt":"-10:00"
+    },
+    {
+        "view":"(UTC-9:30) Marquesas",
+        "gmt":"-9:30"
+    },
+    {
+        "view":"(UTC-9:00) Juneau, Nome, Gambier",
+        "gmt":"-9:00"
+    },
+    {
+        "view":"(UTC-8:00) Dawson, Los Angeles, Tijuana, Vancouver",
+        "gmt":"-8:00"
+    },
+    {
+        "view":"(UTC-7:00) Boise, Phoenix, Edmonton, Inuvik",
+        "gmt":"-7:00"
+    },
+    {
+        "view":"(UTC-6:00) Belize, Chicago, Costa Rica, El Salvador, Guatemala, Managua, Mexico City",
+        "gmt":"-6:00"
+    },
+    {
+        "view":"(UTC-5:00) Bogota, Cancun, Detroit, Lima, New York, Panama, Toronto",
+        "gmt":"-5:00"
+    },
+    {
+        "view":"(UTC-4:00) Aruba, Barbados, Caracas, Guyana, La Paz, Manaus, Santiago, Puerto Rico",
+        "gmt":"-4:00"
+    },
+    {
+        "view":"(UTC-3:30) St Johns",
+        "gmt":"-3:30"
+    },
+    {
+        "view":"(UTC-3:00) Buenos Aires, Bahia, Cayenne, Montevideo",
+        "gmt":"-3:00"
+    },
+    {
+        "view":"(UTC-2:00) Noronha, South Georgia",
+        "gmt":"-2:00"
+    },
+    {
+        "view":"(UTC-1:00) Scoresbysund, Azores, Cape Verde",
+        "gmt":"-1:00"
+    },
+    {
+        "view":"(UTC) Hora universal coordinada",
+        "gmt":"0:00"
+    },
+    {
+        "view":"(UTC+1:00) Algiers, Madrid, Berlin, Bruselas, Lagos, Túnez, Niamey, Amsterdam",
+        "gmt":"+1:00"
+    },
+    {
+        "view":"(UTC+2:00) Cairo, Harare, Tripoli, Gaza, Atenas",
+        "gmt":"+2:00"
+    },
+    {
+        "view":"(UTC+3:00) Qatar, Moscú, Simferopol ",
+        "gmt":"+3:00"
+    },
+    {
+        "view":"(UTC+3:30) Tehran",
+        "gmt":"+3:30"
+    },
+    {
+        "view":"(UTC+4:00) Baku, Dubai",
+        "gmt":"+4:00"
+    },
+    {
+        "view":"(UTC+4:30) Kabul ",
+        "gmt":"+4:30"
+    },
+    {
+        "view":"(UTC+5:00) Mawson, Aqtobe, Karachi, Maldivas",
+        "gmt":"+5:00"
+    },
+    {
+        "view":"(UTC+5:30) Colombo, Kolkata ",
+        "gmt":"+5:30"
+    },
+    {
+        "view":"(UTC+5:45) Kathmandu",
+        "gmt":"+5:45"
+    },
+    {
+        "view":"(UTC+6:00) Bishkek, Novosibirsk, Qyzylorda",
+        "gmt":"+6:00"
+    },
+    {
+        "view":"(UTC+7:00) Bangkok, Indonesia, Barnaul ",
+        "gmt":"+7:00"
+    },
+    {
+        "view":"(UTC+8:00) Macau, Shanghai, Singapore",
+        "gmt":"+8:00"
+    },
+    {
+        "view":"(UTC+8:30)  Pyongyang",
+        "gmt":"+8:30"
+    },
+    {
+        "view":"(UTC+8:45) Eucla",
+        "gmt":"+8:45"
+    },
+    {
+        "view":"(UTC+9:00) Chita, Jayapura, Tokyo, Palau",
+        "gmt":"+9:00"
+    },
+    {
+        "view":"(UTC+9:30) Darwin, Adelaide",
+        "gmt":"+9:30"
+    },
+    {
+        "view":"(UTC+10:00) Vladivostok, Brisbane, Hobart",
+        "gmt":"+10:00"
+    },
+    {
+        "view":"(UTC+10:30) Lord Howe",
+        "gmt":"+10:30"
+    },
+    {
+        "view":"(UTC+11:00) Magadan, Bougainville, Guadalcanal",
+        "gmt":"+11:00"
+    },
+    {
+        "view":"(UTC+12:00) Kamchatka, Auckland, Majuro",
+        "gmt":"+12:00"
+    },
+    {
+        "view":"(UTC+12:45) Chatham",
+        "gmt":"+12:45"
+    },
+    {
+        "view":"(UTC+13:00) Apia, Enderbury, Tongatapu ",
+        "gmt":"+13:00"
+    },
+    {
+        "view":"(UTC+14:00) Kiritimati ",
+        "gmt":"+14:00"
+    }
+    
+]

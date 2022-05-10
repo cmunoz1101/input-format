@@ -1,0 +1,396 @@
+{
+  "name": "user",
+  "title": "user.title",
+  "fieldToShowInActon": "username",
+  "titleDesc": "user.title.desc",
+  "icon": "<i class=\"fa fa-user fa-1_5x\"></i>",
+  "service": "./service/user",
+  "recordId": "id",
+  "showFormIn": "standard",
+  "definitionReport": "user-report-1",
+  "attributes": [
+    {
+      "name": "id",
+      "type": "number",
+      "formOptions": {
+        "options": {
+          "readonly": true,
+          "hideInNew": true,
+          "styleClass": "col-xs-3 col-sm-6  col-md-6"
+        },
+        "validators": [
+          "required"
+        ],
+        "controlType": "number"
+      }
+    },
+    {
+      "name": "username",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "styleClass": "col-xs-3 col-sm-6  col-md-6",
+          "showLength": true,
+          "maxLength": 25
+        },
+        "validators": [
+          "required",
+          "identifier",
+          {
+            "name": "minLength",
+            "value": 3
+          },
+          {
+            "name": "maxLength",
+            "value": 25
+          }
+        ],
+        "controlType": "text"
+      }
+    },
+    {
+      "name": "password",
+      "type": "string",
+      "formOptions": {
+        "controlType": "password",
+        "options": {
+          "styleClass": "col-md-6",
+          "showLength": true,
+          "maxLength": 30,
+          "showStrength": false
+        },
+        "validators": [
+          "required",
+          {
+            "name": "validatePassword",
+            "isRemote": true,
+            "service": "validate/password"
+          }
+        ]
+      }
+    },
+    {
+      "name": "defaultRole",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "sourceService": "./service/user-role",
+          "sourceValue": "id",
+          "sourceLabel": "identifier",
+          "showSuggest": true,
+          "styleClass": "col-md-6"
+        },
+        "validators": [
+          "required"
+        ],
+        "controlType": "select"
+      }
+    },
+    {
+      "name": "roleList",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "sourceService": "./service/user-role",
+          "sourceValue": "id",
+          "sourceLabel": "identifier",
+          "styleClass": "col-md-6",
+          "multiple": true
+        },
+        "validators": [
+          "required"
+        ],
+        "controlType": "select"
+      }
+    },
+    {
+      "name": "firstName",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "styleClass": "col-xs-3 col-sm-6  col-md-6",
+          "showLength": true,
+          "maxLength": 30
+        },
+        "validators": [
+          "required",
+          "names",
+          {
+            "name": "minLength",
+            "value": 2
+          }
+        ],
+        "controlType": "text"
+      }
+    },
+    {
+      "name": "secondName",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "styleClass": "col-xs-3 col-sm-6  col-md-6",
+          "showLength": true,
+          "maxLength": 30
+        },
+        "validators": [
+          "names",
+          {
+            "name": "minLength",
+            "value": 2
+          }
+        ],
+        "controlType": "text"
+      }
+    },
+    {
+      "name": "firstSurname",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "styleClass": "col-xs-3 col-sm-6  col-md-6",
+          "showLength": true,
+          "maxLength": 30
+        },
+        "validators": [
+          "names",
+          "required",
+          {
+            "name": "minLength",
+            "value": 2
+          }
+        ],
+        "controlType": "text"
+      }
+    },
+    {
+      "name": "secondSurname",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "styleClass": "col-xs-3 col-sm-6  col-md-6",
+          "showLength": true,
+          "maxLength": 30
+        },
+        "validators": [
+          "names",
+          "required",
+          {
+            "name": "minLength",
+            "value": 2
+          }
+        ],
+        "controlType": "text"
+      }
+    },
+    {
+      "name": "sex",
+      "type": "string",
+      "formOptions": {
+        "values": {
+          "M": "label.sex.m",
+          "F": "label.sex.f"
+        },
+        "selected": "F",
+        "options": {
+          "showInline": true
+        },
+        "validators": [],
+        "controlType": "radio"
+      }
+    },
+    {
+      "name": "salutationPrefer",
+      "type": "string",
+      "formOptions": {
+        "values": {
+          "01": "Sr.",
+          "02": "Sra."
+        },
+        "options": {
+          "styleClass": "col-md-3"
+        },
+        "validators": [
+          "required"
+        ],
+        "controlType": "select"
+      }
+    },
+    {
+      "name": "birthday",
+      "type": "date",
+      "formOptions": {
+        "controlType": "datepicker",
+        "validators": [
+          "required"
+        ],
+        "options": {
+          "editabled": false,
+          "styleClass": "col-md-6"
+        }
+      }
+    },
+    {
+      "name": "phoneNumber",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "showSuggest": false,
+          "maxLength": 20,
+          "styleClass": "col-md-3"
+        },
+        "validators": [
+          "required",
+          { 
+            "name": "pattern",
+            "value": "^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]*$"
+          }
+        ],
+        "controlType": "text"
+      }
+    },
+    {
+      "name": "businessEmail",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "rightIcon": "mail",
+          "maxLength": 80,
+          "styleClass": "col-xl-6"
+        },
+        "validators": [
+          "required",
+          "email"
+        ],
+        "controlType": "text"
+      }
+    },
+    {
+      "name": "status",
+      "type": "valpos",
+      "formOptions": {
+        "values": {
+          "LO": "user.status.locked",
+          "AC": "user.status.active",
+          "IN": "user.status.inactive",
+          "XP": "user.status.password.expired",
+          "CR": "user.status.created",
+          "DE": "user.status.deleted"
+        },
+        "controlType": "badge", 
+        "options": {
+          "hideInNew": true,
+          "styleClass": "col-md-6",
+          "styles": {
+            "LO": "label label-warning",
+            "AC": "label label-primary",
+            "IN": "label label-danger",
+            "XP": "label label-warning",
+            "CR": "label label-warning",
+            "DE": "label label-danger"
+          }
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "name": "user_info",
+      "title": "user_group_user_info",
+      "description": "country_group_info_description",
+      "controls": [
+        [
+          "username", "status"
+        ],
+        [ "password" ],
+        [
+          "defaultRole",
+          "roleList"
+        ]
+      ]
+    },
+    {
+      "name": "personal_info",
+      "title": "user_group_personal_info",
+      "description": "country_group_info_description",
+      "controls": [
+        [
+          "firstName",
+          "secondName",
+          "firstSurname",
+          "secondSurname",
+          "gender",
+          "sex",
+          
+          "birthday"
+        ]
+      ]
+    },
+    {
+      "name": "contact_info",
+      "title": "user_group_contact_info",
+      "description": "country_group_info_description",
+      "controls": [
+        [
+          "salutationPrefer", "phoneNumber",
+          "businessEmail"
+        ]
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "sortColumnDefault": "username",
+      "sortColumnDirection": "desc",
+      "pagingSize": 5,
+      "expandRow": true,
+      "columns": [
+        {
+          "name": "username",
+          "sortable": true,
+          "style": {
+            "width": "100px"
+          },
+          "optional": false,
+          "filter": true
+        },
+        {
+          "name": "firstName",
+          "sortable": true,
+          "style": {
+            "width": "100px"
+          },
+          "optional": false,
+          "filter": true
+        },
+        {
+          "name": "firstSurname",
+          "sortable": true,
+          "style": {
+            "width": "100px"
+          },
+          "optional": false,
+          "filter": true
+        },
+        {
+          "name": "businessEmail",
+          "sortable": true,
+          "style": {
+            "width": "100px"
+          },
+          "optional": false,
+          "filter": true
+        },
+        {
+          "name": "status",
+          "sortable": true,
+          "style": {
+            "width": "50px"
+          },
+          "optional": false,
+          "filter": true
+        }
+        
+      ]
+    }
+  ]
+}

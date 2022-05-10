@@ -1,0 +1,16 @@
+{
+    "menu.system.settings": "System settings",
+    "menu.cruds": "Configuration",
+    "menu.cruds.customer": "Customers",
+    "menu.cruds.country": "Countries",
+    "menu.security": "Security",
+    "menu.security.user": "User",
+    "menu.security.user.role": "User role",
+    "menu.settings": "System",
+    "menu.settings.application": "Applications",
+    "menu.settings.system": "System settings",
+    "menu.settings.valpos": "Possible values",
+    "menu.business.config": "Settings",
+    "menu.ticket.manager": "Ticket manager",
+    "menu.parent.dashboard": "Dashboard"
+}

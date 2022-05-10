@@ -1,0 +1,43 @@
+[
+  {
+    "id": 30,
+    "name": "security",
+    "label": "menu.security",
+    "icon": "<i class=\"fa fa-address-book\"></i>",
+    "fullPath": "/security",
+    "singlePath": "security",
+    "isProgram": false,
+    "children": [
+      {
+        "id": 32,
+        "name": "user",
+        "label": "menu.security.user",
+        "icon": null,
+        "fullPath": "/security/user",
+        "singlePath": "user",
+        "isProgram": true,
+        "children": []
+      },
+      {
+        "id": 32,
+        "name": "user_role",
+        "label": "menu.security.user.role",
+        "icon": null,
+        "fullPath": "/security/user-role",
+        "singlePath": "user-role",
+        "isProgram": true,
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "INPUT_CONFIGURATION",
+    "label": "menu.input.configuration",
+    "icon": "<i class=\"fa fa-file-text-o\"></i>",
+    "fullPath": "/input-configuration",
+    "singlePath": "input-configuration",
+    "isProgram": true,
+    "children": []
+  }
+]

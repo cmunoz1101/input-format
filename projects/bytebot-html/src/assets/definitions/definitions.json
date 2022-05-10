@@ -1,0 +1,9 @@
+[
+    { "user": "./assets/definitions/security-definitions/user.json" },
+    { "user_role": "./assets/definitions/security-definitions/user-role.json" },
+    { "system_settings_information": "./assets/definitions/setting-definitions/system-settings-information.json" },
+    { "system_settings_password": "./assets/definitions/setting-definitions/system-settings-password.json" },
+    { "system_settings_userpolicy": "./assets/definitions/setting-definitions/system-settings-userpolicy.json" },
+    { "application": "./assets/definitions/setting-definitions/application.json" },
+    { "valpos": "./assets/definitions/setting-definitions/valpos.json"}
+]

@@ -1,0 +1,84 @@
+{
+  "name": "user_role",
+  "title": "user.role.title",
+  "fieldToShowInActon": "identifier",
+  "icon": "<span class=\"material-icons\">supervisor_account</span>",
+  "service": "./service/user-role",
+  "recordId": "id",
+  "showFormIn": "standard",
+  "definitionReport": "user-role-report-1",
+  "attributes": [
+    {
+      "name": "id",
+      "type": "number",
+      "formOptions": {
+        "options": {
+          "hideInNew": true,
+          "readonly": true,
+          "styleClass": "col-xs-3 col-sm-6  col-md-3"
+        },
+        "validators": [
+          "required"
+        ],
+        "controlType": "number"
+      }
+    },
+    {
+      "name": "identifier",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "styleClass": "col-md-6",
+          "showLength": true,
+          "maxLength": 80
+        },
+        "validators": [
+          "required"
+        ]
+      }
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "styleClass": "col-md-6",
+          "showLength": true,
+          "maxLength": 120
+        },
+        "validators": [
+          "required"
+        ]
+      }
+    }
+  ],
+  "grid": [
+    {
+      "sortColumnDefault": "id",
+      "sortColumnDirection": "desc",
+      "pagingSize": 5,
+      "expandRow": false,
+      "columns": [
+        {
+          "name": "id",
+          "sortable": true,
+          "style": {"width": "100px"},
+          "optional": false,
+          "filter": true
+        },
+        {
+          "name": "identifier",
+          "sortable": true,
+          "style": {"width": "180px"},
+          "filter": true
+        },
+        {
+          "name": "description",
+          "sortable": true,
+          "style": {"width": "180px"},
+          "filter": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+
+[
+    { "id": 1, "identifier": "ADMIN", "description": "Aministración" },
+    { "id": 2, "identifier": "XDFUSER", "description": "XdfUser" }
+]

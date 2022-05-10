@@ -1,0 +1,21 @@
+{
+    "menu.system.settings": "Sistema",
+    "menu.cruds": "Configuración",
+    "menu.cruds.customer": "Clientes",
+    "menu.cruds.country": "Ciudades",
+    "menu.security": "Seguridad",
+    "menu.security.user": "Usuario",
+    "menu.security.user.role": "Rol de usuario",
+    "menu.settings": "Sistema",
+    "menu.settings.application": "Aplicaciones",
+    "menu.settings.system": "Configuración de sistema",
+    "menu.settings.valpos": "Valores posibles",
+    "menu.business.config": "Configuración",
+    "menu.ticket.manager": "Gestor de tickets",
+    "menu.parent.agent": "Agentes",
+    "menu.parent.dashboard": "Dashboards",
+    "menu.dashboard.operative": "Indicadores operativos",
+    "menu.dashboard.customer.interaction": "Indicadores de interacción",
+
+    "menu.input.configuration": "Configuración de insumos"
+}

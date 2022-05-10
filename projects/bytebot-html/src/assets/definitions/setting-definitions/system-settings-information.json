@@ -1,0 +1,83 @@
+{
+  "name": "system_settings_information",
+  "title": "system_settings_information_title",
+  "titleDesc": "system_settings_information_title_desc",
+  "icon": "<i class=\"fa fa-info-circle fa-2x\"></i>",
+  "service": "./service/system-settings/information",
+  "attributes": [
+    {
+      "name": "name",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "max-length": "200",
+          "styleClass": "col-12"
+        },
+        "validators": [
+          "required"
+        ]
+      }
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "rightIcon": "mail",
+          "rightIconLabel": "",
+          "showLength": true,
+          "maxLength": 200,
+          "styleClass": "col-12"
+        },
+        "validators": [
+          "required",
+          "email"
+        ]
+      }
+    },
+    {
+      "name": "domain",
+      "type": "string",
+      "formOptions": {
+        "options": {
+          "rightIcon": "http",
+          "rightIconLabel": "",
+          "showLength": true,
+          "maxLength": 200,
+          "styleClass": "col-12"
+        },
+        "validators": [
+          "required",
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "image",
+      "type": "file-upload",
+      "formOptions": {
+        "options": {
+          "text": "btn.upload.image",
+          "param": "file",
+          "target": "./service/file/upload",
+          "height": "250px",
+          "styleClass": "col-6"
+        },
+        "controlType": "file-upload"
+      }
+    }
+  ],
+  "groups": [
+    {
+      "name": "info",
+      "title": "",
+      "description": "settings_information_group_info_description",
+      "controls": [
+        "name",
+        "email",
+        "domain",
+        ["image"]
+      ]
+    }
+  ]
+}

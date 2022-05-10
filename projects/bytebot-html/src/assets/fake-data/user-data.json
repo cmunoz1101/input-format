@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "username": "agutierrez",
+        "firstName": "Aaron",
+        "secondName": "Junior",
+        "firstLastName": "Gutiérrez",
+        "secondLastName": "López",
+        "email": "agutierrez@bytesw.com",
+        "gender": "M",
+        "maritalStatus": "S",
+        "birthday": "2020-03-10",
+        "phone": "952226613",
+        "countryCode": 1,
+        "principalRole": 1,
+        "assignedRoles": [1, 2],
+        "status": "A"
+    },
+    {
+        "id": 2,
+        "username": "mortiz",
+        "firstName": "Marco",
+        "secondName": "Antonio",
+        "firstLastName": "Ortiz",
+        "secondLastName": "García",
+        "email": "mortiz@bytesw.com",
+        "gender": "M",
+        "maritalStatus": "C",
+        "birthday": "2020-03-10",
+        "phone": "952226613",
+        "countryCode": 1,
+        "principalRole": 1,
+        "assignedRoles": [1, 2],
+        "status": "I"
+    }
+]

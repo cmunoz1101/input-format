@@ -1,0 +1,130 @@
+{
+  "name": "system_settings_userpolicy",
+  "title": "system_settings_userpolicy_title",
+  "titleDesc": "system_settings_userpolicy_title_desc",
+  "icon": "<i class=\"fa fa-user-secret fa-2x\"></i>",
+  "service": "./service/system-settings/userpolicy",
+  "attributes": [
+    {
+      "name": "maxFailLogin",
+      "type": "number",
+      "formOptions": {
+        "options": {
+          "showSuggest": true,
+          "styleClass": "col-12"
+        },
+        "validators": [
+          "required",
+          {
+            "name": "min",
+            "value": 0
+          },
+          {
+            "name": "max",
+            "value": 99
+          }
+        ],
+        "controlType": "number"
+      }
+    },
+    {
+      "name": "historyValidation",
+      "type": "number",
+      "formOptions": {
+        "options": {
+          "showSuggest": true,
+          "styleClass": "col-12"
+        },
+        "validators": [
+          "required",
+          {
+            "name": "min",
+            "value": 0
+          },
+          {
+            "name": "max",
+            "value": 99
+          }
+        ],
+        "controlType": "number"
+      }
+    },
+    {
+      "name": "userInactivity",
+      "type": "number",
+      "formOptions": {
+        "options": {
+          "showSuggest": true,
+          "styleClass": "col-12"
+        },
+        "validators": [
+          "required",
+          {
+            "name": "min",
+            "value": 0
+          },
+          {
+            "name": "max",
+            "value": 99
+          }
+        ],
+        "controlType": "number"
+      }
+    },
+    {
+      "name": "passwordExpiration",
+      "type": "number",
+      "formOptions": {
+        "options": {
+          "showSuggest": true,
+          "styleClass": "col-12"
+        },
+        "validators": [
+          "required",
+          {
+            "name": "min",
+            "value": 0
+          },
+          {
+            "name": "max",
+            "value": 99
+          }
+        ],
+        "controlType": "number"
+      }
+    },
+    {
+      "name": "automaticUnlock",
+      "type": "number",
+      "formOptions": {
+        "options": {
+          "showSuggest": true,
+          "styleClass": "col-12"
+        },
+        "validators": [
+          "required",
+          {
+            "name": "min",
+            "value": 0
+          },
+          {
+            "name": "max",
+            "value": 99
+          }
+        ],
+        "controlType": "number"
+      }
+    },
+    {
+      "name": "manageAccountByEmail",
+      "type": "boolean",
+      "formOptions": {
+        "options": {
+          "showSuggest": true,
+          "styleClass": "col-12"
+        },
+        "controlType": "checkbox"
+      }
+    }
+  ]
+}

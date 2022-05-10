@@ -1,0 +1,23 @@
+[
+    {
+        "name": "system_settings_information",
+        "label": "tabs.system.settings.information.title",
+        "description": "tabs.system.settings.information.title.desc",
+        "path": "/settings/system-settings/information",
+        "icon": "<i class=\"fa fa-info-circle fa-1_5x\"></i>"
+    },
+    {
+        "name": "system_settings_password",
+        "label": "tabs.system.settings.password.title",
+        "description": "tabs.system.settings.password.title.desc",
+        "path": "/settings/system-settings/password",
+        "icon": "<i class=\"fa fa-key fa-1_5x\"></i>"
+    },
+    {
+        "name": "system_settings_userpolicy",
+        "label": "tabs.system.settings.userpolicy.title",
+        "description": "tabs.system.settings.userpolicy.title.desc",
+        "path": "/settings/system-settings/userpolicy",
+        "icon": "<i class=\"fa fa-user-secret fa-1_5x\"></i>"
+    }
+]

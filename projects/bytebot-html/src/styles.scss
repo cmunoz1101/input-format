@@ -1,0 +1,188 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/style";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "./assets/styles/google-robot.css";
+
+$fontcolor: #676a6c;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.hr-line-dashed {
+  margin: 10px 0;
+}
+
+.wrapper-content {
+  padding: 5px 5px 40px;
+}
+
+.mat-menu-panel-columns {
+  .mat-menu-content {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  min-height: 10px !important;
+}
+
+.mat-horizontal-content-container {
+  padding: 0px 0px 10px 0px !important;
+}
+
+.mat-horizontal-stepper-header-container {
+  margin: 3px 30px !important;
+}
+
+.mat-step-header .mat-step-label {
+  span.description {
+      color: $fontcolor;
+      font-size: 10px;
+  }
+}
+
+
+label.mat-checkbox-layout {
+  margin-bottom: 0px !important;
+}
+
+.mat-slide-toggle {
+  margin-bottom: 5px !important;
+}
+
+.table > thead > tr > th.mat-header-cell {
+  vertical-align: middle !important;
+}
+
+//------ dyna-form
+.mail-box-content {
+  background-color: #ffffff;
+  border: 1px solid #e7eaec;
+  padding: 10px 10px;
+}
+
+.mat-menu-panel {
+  min-height: 10px !important;
+  .mat-menu-content:not(:empty) { 
+      padding: 0;
+      button {
+          margin: 7px 5px;
+          height: 25px;
+          line-height: 0px !important;
+      }
+  }
+}
+
+
+.mail-box-header {
+  padding: 10px 20px 8px;
+  h1, h2, h3, h4, h5 {
+    margin: 0 0 5px;
+    font-weight: 500;
+  }
+
+  .icon {
+    padding: 5px 10px 0 0;
+  }
+}
+
+.material-icons {
+  font-size: 22px;
+}
+
+.mail-box-header {
+  .title {
+    margin-bottom: 1px !important;
+  }
+  .grid-title {
+    padding-top: 5px;
+    margin-bottom: 0 !important;
+  }
+}
+
+.fa-1_5x {
+  font-size: 1.5em !important;
+}
+
+
+$fontcolor: #676a6c;
+button {
+  color: $fontcolor;  
+  font-size: 10px;
+  .btn-label {
+      padding-left: 5px;
+  }
+  margin-left: 2px;
+}
+
+.legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+  h4 {
+      margin: 0 0 5px;
+  }
+}
+
+.group-title {
+  font-size: 70%;
+    color: #676a6c;
+    font-weight: 500;
+}
+
+/* FIn de estilos XDF */
+
+.mat-button-toggle-label-content {
+  line-height: 10px !important;
+}
+
+.mat-icon {
+  font-size: 16px;
+}
+
+.panel-viewer-wrapper {
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  margin: 4px 0 10px;
+}
+
+.panel-viewer-title {
+  padding: 12px 0px 12px 20px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.54);
+  background: rgba(0, 0, 0, 0.03);
+
+  .mat-icon-button {
+    line-height: 0px !important;
+  }
+}
+
+.panel-viewer-body {
+  padding: 10px 30px 10px 30px;
+  background-color: #ffffff;
+}
+
+
+.amd-form-control {
+  width: 100%;
+}
+
+.cdk-global-scrollblock {
+  position: fixed;
+  overflow-y: inherit;
+  /*width: inherit;*/
+  width: -moz-available; /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: stretch;
+}
+
+// Z-index para la barra de menu
+.navbar-static-side {
+  z-index: 999;
+  position: absolute;
+}

@@ -1,0 +1,173 @@
+{
+    "name": "application",
+    "title": "application.title",
+    "fieldToShowInActon": "identifier",
+    "icon": "<i class=\"fa fa-window-restore\"></i>",
+    "service": "./service/application",
+    "recordId": "id",
+    "showFormIn": "standard",
+    "definitionReport": "application-report-1",
+    "attributes": [
+        {
+            "name": "id",
+            "type": "number",
+            "formOptions": {
+                "options": {
+                    "readonly": true,
+                    "hideInNew": true,  
+                    "styleClass": "col-xs-12 col-sm-6  col-md-6"
+                },
+                "validators": [
+                    "required"
+                ],
+                "controlType": "number"
+            }
+        },
+        {
+            "name": "identifier",
+            "type": "string",
+            "formOptions": {
+                "options": {
+                    "styleClass": "col-xs-12 col-sm-6  col-md-6",
+                    "showLength": true,
+                    "maxLength": 60
+                },
+                "validators": [
+                    "required"
+                ],
+                "controlType": "text"
+            }
+        },
+        {
+            "name": "description",
+            "type": "string",
+            "formOptions": {
+                "options": {
+                    "styleClass": "col-xs-12 col-sm-6  col-md-6",
+                    "showLength": true,
+                    "maxLength": 200
+                },
+                "validators": [
+                    "required"
+                ],
+                "controlType": "text"
+            }
+        },
+        {
+            "name": "redirectURL",
+            "type": "string",
+            "formOptions": {
+                "options": {
+                    "styleClass": "col-xs-12 col-sm-6  col-md-6",
+                    "showLength": true,
+                    "maxLength": 2000
+                },
+                "validators": [
+                    "required"
+                ],
+                "controlType": "text"
+            }
+        },
+        {
+            "name": "clientId",
+            "type": "string",
+            "formOptions": {
+                "options": {
+                    "readonly": true,
+                    "styleClass": "col-xs-12 col-sm-6  col-md-6"
+                },
+                "controlType": "text"
+            }
+        },
+        {
+            "name": "clientSecret",
+            "type": "string",
+            "formOptions": {
+                "options": {
+                    "readonly": true,
+                    "styleClass": "col-xs-12 col-sm-6  col-md-6"
+                },
+                "controlType": "text"
+            }
+        },
+        {
+            "name": "status",
+            "type": "valpos",
+            "formOptions": {
+              "values": {
+                "A": "user.status.active",
+                "I": "user.status.inactive"
+              },
+              "controlType": "badge", 
+              "options": {
+                "hideInNew": true,
+                "styleClass": "col-md-6",
+                "styles": {
+                  "A": "label label-primary",
+                  "I": "label label-danger"
+                }
+              }
+            }
+          }
+    ],
+    "groups": [
+        {
+            "name": "info",
+            "title": "",
+            "description": "country_group_info_description",
+            "controls": [
+                [
+                    "identifier", "status"
+                ],
+                "description",
+                "returnPath",
+                "clientId",
+                "clientSecret"
+            ]
+        }
+    ],
+    "grid": [
+        {
+            "sortColumnDefault": "identifier",
+            "sortColumnDirection": "desc",
+            "pagingSize": 5,
+            "expandRow": false,
+            "columns": [
+                {
+                    "name": "identifier",
+                    "sortable": true,
+                    "style": {
+                        "width": "100px"
+                    },
+                    "optional": false,
+                    "filter": true
+                },
+                {
+                    "name": "description",
+                    "sortable": true,
+                    "style": {
+                        "width": "180px"
+                    },
+                    "filter": true
+                },
+                {
+                    "name": "redirectURL",
+                    "sortable": true,
+                    "style": {
+                        "width": "180px"
+                    },
+                    "filter": true
+                },
+                {
+                    "name": "status",
+                    "sortable": true,
+                    "style": {
+                      "width": "50px"
+                    },
+                    "optional": false,
+                    "filter": true
+                  }
+            ]
+        }
+    ]
+}

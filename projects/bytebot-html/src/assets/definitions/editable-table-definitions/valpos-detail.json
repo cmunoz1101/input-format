@@ -1,0 +1,10 @@
+{
+    "label": {
+        "type": "text",
+        "required": true
+    },
+    "value": {
+        "type": "text",
+        "required": true
+    }
+}

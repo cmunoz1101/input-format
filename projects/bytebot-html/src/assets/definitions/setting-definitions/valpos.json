@@ -1,0 +1,106 @@
+{
+    "name": "valpos",
+    "title": "valpos.title",
+    "fieldToShowInActon": "identifier",
+    "icon": "<i class=\"glyphicon glyphicon-list\"></i>",
+    "service": "./service/possible-value",
+    "recordId": "id",
+    "showFormIn": "standard",
+    "definitionReport": "valpos-report-1",
+    "attributes": [
+        {
+            "name": "id",
+            "type": "number",
+            "formOptions": {
+                "options": {
+                    "readonly": true,
+                    "hideInNew": true,
+                    "styleClass": "col-xs-12 col-sm-6  col-md-6"
+                },
+                "validators": [
+                    "required"
+                ],
+                "controlType": "number"
+            }
+        },
+        {
+            "name": "identifier",
+            "type": "string",
+            "formOptions": {
+                "options": {
+                    "styleClass": "col-xs-12 col-sm-6  col-md-6",
+                    "showLength": true,
+                    "maxLength": 20
+                },
+                "validators": [
+                    "required"
+                ],
+                "controlType": "text"
+            }
+        },
+        {
+            "name": "description",
+            "type": "string",
+            "formOptions": {
+                "options": {
+                    "styleClass": "col-xs-12 col-sm-6  col-md-6",
+                    "showLength": true,
+                    "maxLength": 200
+                },
+                "validators": [
+                    "required"
+                ],
+                "controlType": "text"
+            }
+        }
+    ],
+    "groups": [
+        {
+            "name": "info",
+            "title": "",
+            "description": "country_group_info_description",
+            "controls": [
+                [
+                    "id"
+                ],
+                "identifier",
+                "description"
+            ]
+        }
+    ],
+    "grid": [
+        {
+            "sortColumnDefault": "id",
+            "sortColumnDirection": "desc",
+            "pagingSize": 5,
+            "expandRow": false,
+            "columns": [
+                {
+                    "name": "id",
+                    "sortable": true,
+                    "style": {
+                        "width": "100px"
+                    },
+                    "optional": false,
+                    "filter": true
+                },
+                {
+                    "name": "identifier",
+                    "sortable": true,
+                    "style": {
+                        "width": "180px"
+                    },
+                    "filter": true
+                },
+                {
+                    "name": "description",
+                    "sortable": true,
+                    "style": {
+                        "width": "180px"
+                    },
+                    "filter": true
+                }
+            ]
+        }
+    ]
+}

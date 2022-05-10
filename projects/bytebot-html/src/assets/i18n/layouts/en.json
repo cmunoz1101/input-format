@@ -1,0 +1,22 @@
+{
+    "language": "Language",
+    "en": "English",
+    "es": "Spanish",
+
+    "since": "{{now}}",
+    "back.to.top": "Back to Top",
+    "logout": "Logout",
+
+    "notfound.title": "We are sorry, Page not found!",
+    "notfound.subtitle": "The page you are looking for might have been removed had its name changed or is temporarily unavailable.",
+    "notfound.gohome": "Back To Homepage",
+
+    "title.chat": "Chat",
+
+    "title.application.options": "System Preferences",
+    "application.options.details": "This option allows users to customize their experience with the application. The settings will be maintained on this device and with this browser",
+    "application.options.exit": "Exit",
+
+    "title.roles.options": "Roles",
+    "roles.options.select.one": "Select the role you want to use"
+}

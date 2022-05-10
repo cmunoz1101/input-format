@@ -1,0 +1,22 @@
+{
+    "language": "Idioma",
+    "en": "Inglés",
+    "es": "Español",
+
+    "since": "{{now}}",
+    "back.to.top": "Volver arriba",
+    "logout": "Salir",
+
+    "notfound.title": "Lo sentimos, ¡página no encontrada!",
+    "notfound.subtitle": "La página que ud busca ha sido removida, ha cambiado de nombre o temporalmente no está disponible.",
+    "notfound.gohome": "Ir a Inicio",
+
+    "title.chat": "Chat",
+
+    "title.application.options": "Ajuste de sistema",
+    "application.options.details": "Está opción permite a los usuarios personalizar su experiencia con el aplicativo. Los ajustes se mantendrán en este dispositivo y con este navegador",
+    "application.options.exit": "Salir",
+
+    "title.roles.options": "Roles",
+    "roles.options.select.one": "Seleccione el rol que desea utilizar"
+}
