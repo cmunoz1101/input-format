@@ -1,0 +1,82 @@
+<div class="popup-general">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="popup-title">
+                <img src="{{ logoSrc }}" with="25" height="25">
+                <span class="header-popup-text">{{ title | translate }}</span>
+
+                <div class="pull-right">
+                    <button type="button" class="close" (click)="close()">×</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <div>
+        <label>{{'label.extract.field.dialog.description' | translate}}:</label>
+    </div>
+
+    <br>
+
+    <form [formGroup]="form" name="form" autocomplete="off" novalidate (ngSubmit)="onSubmit()">
+
+        <div class="row">
+            <div class="form-group col-xl-6">
+                <xdf-input name="name" label="extract.field.name.label" type="text" [required]="true"
+                    placeholder="extract.field.name.placeholder" [formGroup]="form"
+                    [options]="{maxLength: 80, showLength: true}"></xdf-input>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xl-6">
+                <xdf-input name="initialPosition" label="extract.field.initial.position.label" type="number"
+                    [required]="true" placeholder="extract.field.initial.position.placeholder" [formGroup]="form"
+                    (input)="onChangeInitialPosition($event.target.value)"></xdf-input>
+            </div>
+            <div class="form-group col-xl-6">
+                <xdf-input name="length" label="extract.field.length.label" type="number" [required]="false"
+                    placeholder="extract.field.length.placeholder" [formGroup]="form"
+                    (input)="onChangeLength($event.target.value)">
+                </xdf-input>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="formGroup col-xl-12">
+                <mat-divider></mat-divider>
+                <br>
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>{{ 'extract.field.preview.label' | translate }}
+                    </mat-label>
+                    <div>
+                        <input [value]="preview" name="preview" matInput type="text" disabled />
+                    </div>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="border-top" style="padding-top: 20px;">
+                    <div class="pull-right">
+                        <button class="btn btn-light" mat-stroked-button (click)="close()" type="button"
+                            [disabled]="processing">
+                            <i class="fa fa-ban" aria-hidden="true"></i>&nbsp;{{ 'btn.cancel' | translate }}
+                        </button>
+                        <button class="btn btn-primary btn-save" mat-stroked-button
+                            [disabled]="form?.invalid || processing " type="submit">
+                            <i class="fa fa-save" aria-hidden="true"></i>&nbsp;{{'btn.save' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>

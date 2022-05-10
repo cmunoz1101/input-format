@@ -1,0 +1,33 @@
+.radio-group-vertical {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    align-items: flex-start;
+}
+
+.radio-button-margin {
+    margin: 5px;
+}
+
+.header-popup-text {
+    font-size: 18px;
+    padding-left: 15px;
+    vertical-align: bottom;
+    font-weight: 600;
+}
+
+.btn-save {
+    margin-left: 20px;
+    i {
+        margin-top: -3px;
+    }
+}
+
+.file-upload {
+    margin-left: 30px;
+    margin-top: -10px;
+}
+
+.btn-upload-image {
+    width: 100%;
+}

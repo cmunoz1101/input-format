@@ -1,0 +1,78 @@
+<div class="popup-general">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="popup-title">
+                <img src="{{ logoSrc }}" with="25" height="25">
+                <span class="header-popup-text">{{ title | translate }}</span>
+
+                <div class="pull-right">
+                    <button type="button" class="close" (click)="close()">×</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <form [formGroup]="form" name="form" autocomplete="off" novalidate (ngSubmit)="onSubmit()">
+
+        <label>{{'label.strategy.dialog.description' | translate}}:</label>
+
+        <div class="row">
+            <div class="formGroup col-xl-6">
+                <mat-radio-group class="radio-group-vertical" aria-label="Seleccione una opción"
+                    (change)="changeStrategy($event)" formControlName="strategy">
+                    <mat-radio-button class="radio-button-margin" [value]="'E'">{{'label.strategy.dialog.free.entry' |
+                        translate}}
+                    </mat-radio-button>
+                    <mat-radio-button class="radio-button-margin" [value]="'F'">
+                        {{'label.strategy.dialog.according.to.base.file' | translate}}
+                        &nbsp;<i class="fa fa-info-circle" aria-hidden="true"
+                            matTooltip="{{'label.strategy.dialog.tooltip.message' | translate}}"
+                            matTooltipPosition="right"></i>
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="row" *ngIf="uploadFile">
+            <div class="formGroup col-xl-12">
+                <div class="file-upload">
+                    <mat-form-field style="width: 100%;" appearance="legacy">
+                        <mat-label>{{ 'label.strategy.dialog.fileName' | translate }}</mat-label>
+                        <div [formGroup]="form">
+                            <input id="fileName" [required]="false" name="fileName" formControlName="fileName"
+                                (keydown)="$event.preventDefault();" matInput type="text" />
+                        </div>
+                        <input hidden type="file" accept=".csv, .txt" #fileInput (change)="onFileSelected($event)" />
+                        <button mat-stroked-button material-icons-outlined matSuffix (click)="fileInput.click()"
+                            type="button"><i class="fa fa-search"></i>&nbsp;{{ 'btn.search' | translate }}
+                        </button>
+                        <mat-error *ngIf="form.controls.fileName.errors?.pattern">
+                            {{ 'file-upload.fileName.pattern.message' | translate }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="border-top" style="padding-top: 20px;">
+                    <div class="pull-right">
+                        <button class="btn btn-light" mat-stroked-button (click)="close()" type="button"
+                            [disabled]="processing">
+                            <i class="fa fa-ban" aria-hidden="true"></i>&nbsp;{{ 'btn.cancel' | translate }}
+                        </button>
+                        <button class="btn btn-primary btn-save" mat-stroked-button
+                            [disabled]="form?.invalid || processing || (form.controls['strategy'].value === 'F' && form.controls['fileName'].value === '')"
+                            type="submit">
+                            <i class="fa fa-check" aria-hidden="true"></i>&nbsp;{{'btn.accept' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>

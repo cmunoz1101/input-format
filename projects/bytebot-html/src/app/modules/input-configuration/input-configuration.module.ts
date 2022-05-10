@@ -14,11 +14,13 @@ import { FieldFormatComponent } from './components/field-format/field-format.com
 import { InputDefinitionComponent } from './components/input-definition/input-definition.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { TestInputComponent } from './components/test-input/test-input.component';
+import { InputStructDialogComponent } from './components/input-definition/dialog/input-struct-dialog/input-struct-dialog.component';
+import { ExtractFieldDialogComponent } from './components/input-definition/dialog/extract-field-dialog/extract-field-dialog.component';
 
 
 
 @NgModule({
-  declarations: [InputConfigurationDetailComponent, InputConfigurationComponent, FieldFormatComponent, InputDefinitionComponent, ResumeComponent, TestInputComponent],
+  declarations: [InputConfigurationDetailComponent, InputConfigurationComponent, FieldFormatComponent, InputDefinitionComponent, ResumeComponent, TestInputComponent, InputStructDialogComponent, ExtractFieldDialogComponent],
   imports: [
     CommonModule,
     FormsModule,
