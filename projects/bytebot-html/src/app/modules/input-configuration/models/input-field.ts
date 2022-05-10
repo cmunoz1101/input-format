@@ -5,6 +5,7 @@ export class InputField {
     id: number;
     inputMapping: InputMapping;
     inputFieldMandatory: InputFieldMandatory;
+    identifier: string;
     optional: string;
     description: string;
     dataType: string;
