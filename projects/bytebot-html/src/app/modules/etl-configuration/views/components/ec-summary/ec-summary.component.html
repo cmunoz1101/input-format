@@ -1,0 +1,36 @@
+<div class="panel-viewer-wrapper">
+  <div class="panel-viewer-title">
+    <i class="fa fa-info-circle"></i>
+    {{ "etl_configuration.fourth.section.label" | translate }}
+  </div>
+
+  <div class="footer-bar">
+    <div class="row">
+      <div class="col-12">
+        <button mat-stroked-button matStepperPrevious class="pull-left">
+          <i class="fa fa-chevron-left"></i>
+          <span class="pl-1">{{ "btn.previous" | translate }}</span>
+        </button>
+        <button
+          *ngIf="this.mode !== 'view'"
+          class="btn btn-primary mat-stroked-button mat-button-base pull-right"
+          mat-stroked-button
+          (click)="next()"
+          [disabled]="buttonSave"
+        >
+          <i class="fa fa-save"></i>&nbsp;
+          <span class="pr-1">{{ "btn.save" | translate }}</span>
+        </button>
+        <button
+          mat-stroked-button
+          (click)="exit()"
+          class="pull-right"
+          *ngIf="this.mode === 'view'"
+        >
+          <span class="pr-1">{{ "application.options.exit" | translate }}</span>
+          <i class="fa fa-logout"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

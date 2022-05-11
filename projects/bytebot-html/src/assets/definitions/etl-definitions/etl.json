@@ -1,0 +1,173 @@
+{
+    "name": "etl_configuration",
+    "title": "etl_configuration.title",
+    "fieldToShowInAction": "id",
+    "titleDesc": "etl_configuration.info",
+    "icon": null,
+    "service": "./service/etl_configuration",
+    "recordId": "id",
+    "showFormIn": "standard",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "number",
+        "formOptions": {
+          "options": {
+            "readonly": true,
+            "hideInNew": false
+          },
+          "validators": ["required"],
+          "controlType": "number"
+        }
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "formOptions": {
+          "options": {
+            "showLength": true
+          },
+          "validators": ["required"],
+          "controlType": "text"
+        }
+      },{
+        "name": "startDate",
+        "type": "datepicker",
+        "formOptions": {
+          "options": {},
+          "validators": ["required"],
+          "controlType": "datepicker"
+        }
+      },{
+        "name": "endDate",
+        "type": "datepicker",
+        "formOptions": {
+          "options": {},
+          "validators": ["required"],
+          "controlType": "datepicker"
+        }
+      },{
+        "name": "status",
+        "type": "valpos",
+        "formOptions": {
+          "values": {
+            "V": "etl_configuration.valid",
+            "C": "etl_configuration.expired",
+            "B": "etl_configuration.draft"
+          },
+          "options": {
+            "hideInNew": false,
+            "styleClass": "col-xl-6",
+            "styles": {
+              "V": "label label-success pr-3",
+              "C": "label label-danger"
+            }
+          },
+          "controlType": "text"
+        }
+      },{
+        "name": "validation",
+        "type": "valpos",
+        "formOptions": {
+          "values": {
+            "V": "etl_configuration.valid",
+            "I": "etl_configuration.invalid"
+          },
+          "options": {
+            "hideInNew": false,
+            "styleClass": "col-xl-6",
+            "styles": {
+              "V": "fa fa-check",
+              "I": "fa fa-exclamation-triangle"
+            }
+          },
+          "controlType": "text"
+        }
+      },{
+        "name": "draftId",
+        "type": "number",
+        "formOptions": {
+          "options": {
+            "readonly": true,
+            "hideInNew": false
+          },
+          "controlType": "number"
+        }
+      }
+    ],
+    "groups": [],
+    "grid": [
+      {
+        "sortColumnDefault": "id",
+        "sortColumnDirection": "asc",
+        "pagingSize": 5,
+        "expandRow": false,
+        "columns": [
+          {
+            "name": "id",
+            "sortable": true,
+            "style": {
+              "width": "50px"
+            },
+            "optional": false,
+            "filter": true
+          },
+          {
+            "name": "description",
+            "sortable": true,
+            "style": {
+              "width": "400px"
+            },
+            "optional": false,
+            "filter": true
+          },
+          {
+            "name": "startDate",
+            "sortable": true,
+            "style": {
+              "width": "250px"
+            },
+            "optional": false,
+            "filter": true
+          },
+          {
+            "name": "endDate",
+            "sortable": true,
+            "style": {
+              "width": "250px"
+            },
+            "optional": false,
+            "filter": true
+          },
+          {
+            "name": "status",
+            "sortable": true,
+            "style": {
+              "width": "200px"
+            },
+            "optional": false,
+            "filter": true
+          },
+          {
+            "name": "validation",
+            "sortable": true,
+            "style": {
+              "width": "200px"
+            },
+            "optional": false,
+            "filter": true
+          },
+          {
+            "name": "draftId",
+            "sortable": true,
+            "style": {
+              "width": "200px"
+            },
+            "optional": false,
+            "filter": true
+          }
+        ]
+      }
+    ]
+  }
+  

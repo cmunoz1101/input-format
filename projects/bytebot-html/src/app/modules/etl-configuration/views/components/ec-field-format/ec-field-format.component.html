@@ -1,0 +1,169 @@
+<div class="panel-viewer-wrapper">
+  <div class="panel-viewer-title">
+    <i class="fa fa-info-circle"></i>
+    {{ "etl_configuration.second.section.label" | translate }}
+  </div>
+  <div class="panel-viewer-body">
+    <div class="row">
+      <div class="col-2">
+        <div class="title-with-button">
+          <h4>{{ "etl_configuration.fields_list.label" | translate }}</h4>
+          <button>
+            <i class="fa fa-plus" (click)="onAddDynamicField()"></i>
+          </button>
+        </div>
+        <byte-fields-list
+          #fieldsList
+          (itemSelected)="onFieldSelected($event)"
+        ></byte-fields-list>
+      </div>
+      <div class="col-10">
+        <div class="section-viewer-wrapper">
+          <div class="section-viewer-title">
+            {{
+              dynamic != true
+                ? ("etl_configuration.fields_form.label" | translate)
+                : ("etl_configuration.dynamic_fields_form.label" | translate)
+            }}
+            <div class="actions-box">
+              <button *ngIf="!dynamic">
+                <i class="fa fa-ellipsis-h" [matMenuTriggerFor]="more"></i>
+              </button>
+              <button *ngIf="dynamic">
+                <i
+                  class="fa fa-ellipsis-h"
+                  [matMenuTriggerFor]="moreDynamic"
+                ></i>
+              </button>
+              <button>
+                <i class="fa fa-close" (click)="onDelete()"></i>
+              </button>
+            </div>
+          </div>
+          <byte-fields-form
+            #fieldsForm
+            (changesItemSelected)="onFieldChanges($event)"
+            (editValidation)="handleFunction($event)"
+          ></byte-fields-form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <div class="row">
+      <div class="col-12">
+        <button mat-stroked-button matStepperPrevious class="pull-left">
+          <i class="fa fa-chevron-left"></i>
+          <span class="pl-1">{{ "btn.previous" | translate }}</span>
+        </button>
+        <button
+          mat-stroked-button
+          (click)="next()"
+          [disabled]="isDirty()"
+          class="pull-right"
+        >
+          <span class="pr-1">{{ "btn.next" | translate }}</span>
+          <i class="fa fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-menu #more="matMenu" style="width: auto" class="menu-without-scroll">
+  <button
+    *ngIf="
+      fieldSelected.dataType == 'DATE' || fieldSelected.dataType == 'DECIMAL'
+    "
+    type="button"
+    (click)="handleFunction('format')"
+    mat-menu-item
+  >
+    {{
+      fieldSelected["dateFormat"] != undefined ||
+      fieldSelected["numberFormat"] != undefined
+        ? ("btn.edit.format" | translate)
+        : ("btn.add.format" | translate)
+    }}
+  </button>
+  <hr style="margin: 0; padding: 0" />
+  <button type="button" (click)="handleFunction('posValues')" mat-menu-item>
+    {{
+      fieldSelected["possibleValues"] != undefined
+        ? ("btn.edit.posible_values" | translate)
+        : ("btn.add.posible_values" | translate)
+    }}
+  </button>
+  <button type="button" (click)="handleFunction('equivIntern')" mat-menu-item>
+    {{
+      fieldSelected["internalEquivalence"] != undefined
+        ? ("btn.edit.internal_equiv_intern" | translate)
+        : ("btn.add.internal_equiv_intern" | translate)
+    }}
+  </button>
+  <hr style="margin: 0; padding: 0" />
+
+  <button type="button" (click)="handleFunction('exprValid')" mat-menu-item>
+    {{
+      fieldSelected["regexValidation"] != undefined
+        ? ("btn.edit.expr_valid" | translate)
+        : ("btn.add.expr_valid" | translate)
+    }}
+  </button>
+</mat-menu>
+
+<mat-menu
+  #moreDynamic="matMenu"
+  style="width: auto"
+  class="menu-without-scroll"
+>
+  <button
+    type="button"
+    *ngIf="
+      fieldSelected.dataType == 'DATE' || fieldSelected.dataType == 'DECIMAL'
+    "
+    (click)="handleFunction('format')"
+    mat-menu-item
+  >
+    {{
+      fieldSelected["dateFormat"] != undefined ||
+      fieldSelected["numberFormat"] != undefined
+        ? ("btn.edit.format" | translate)
+        : ("btn.add.format" | translate)
+    }}
+  </button>
+  <hr style="margin: 0; padding: 0" />
+  <button type="button" (click)="handleFunction('dependencies')" mat-menu-item>
+    {{
+      fieldSelected["dependsOn"] != undefined
+        ? ("btn.edit.dependencies" | translate)
+        : ("btn.add.dependencies" | translate)
+    }}
+  </button>
+  <hr style="margin: 0; padding: 0" />
+  <button type="button" (click)="handleFunction('preProcessor')" mat-menu-item>
+    {{
+      fieldSelected["preProcessor"] != undefined
+        ? ("btn.edit.pre_processor" | translate)
+        : ("btn.add.pre_processor" | translate)
+    }}
+  </button>
+  <hr style="margin: 0; padding: 0" />
+
+  <button type="button" (click)="handleFunction('equivIntern')" mat-menu-item>
+    {{
+      fieldSelected["internalEquivalence"] != undefined
+        ? ("btn.edit.internal_equiv_intern" | translate)
+        : ("btn.add.internal_equiv_intern" | translate)
+    }}
+  </button>
+  <hr style="margin: 0; padding: 0" />
+
+  <button type="button" (click)="handleFunction('processor')" mat-menu-item>
+    {{
+      fieldSelected["processor"] != undefined
+        ? ("btn.edit.processor" | translate)
+        : ("btn.add.processor" | translate)
+    }}
+  </button>
+</mat-menu>

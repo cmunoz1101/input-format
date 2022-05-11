@@ -1,0 +1,21 @@
+<div class="panel-viewer-wrapper">
+  <div class="panel-viewer-title">
+    <i class="fa fa-info-circle"></i>
+    {{ "etl_configuration.third.section.label" | translate }}
+  </div>
+
+  <div class="footer-bar">
+    <div class="row">
+      <div class="col-12">
+        <button mat-stroked-button matStepperPrevious class="pull-left">
+          <i class="fa fa-chevron-left"></i>
+          <span class="pl-1">{{ "btn.previous" | translate }}</span>
+        </button>
+        <button mat-stroked-button (click)="next()" class="pull-right">
+          <span class="pr-1">{{ "btn.next" | translate }}</span>
+          <i class="fa fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <mat-horizontal-stepper
+            [linear]="true"
+            labelPosition="bottom"
+            #stepper
+          >
+            <mat-step state="edit">
+              <ng-template matStepLabel>
+                <span class="font-bold">{{
+                  "etl_configuration.first.section.label" | translate
+                }}</span>
+                <div class="font-size-description">
+                  {{
+                    "etl_configuration.first.section.description" | translate
+                  }}
+                </div>
+              </ng-template>
+              <byte-ec-source-definition
+                [stepper]="stepper"
+                #sourceDefinition
+              ></byte-ec-source-definition>
+            </mat-step>
+            <mat-step state="format">
+              <ng-template matStepLabel>
+                <span class="font-bold">{{
+                  "etl_configuration.second.section.label" | translate
+                }}</span>
+                <div class="font-size-description">
+                  {{
+                    "etl_configuration.second.section.description" | translate
+                  }}
+                </div>
+              </ng-template>
+              <byte-ec-field-format
+                [stepper]="stepper"
+                #fieldFormat
+              ></byte-ec-field-format>
+            </mat-step>
+            <mat-step state="test">
+              <ng-template matStepLabel>
+                <span class="font-bold">{{
+                  "etl_configuration.third.section.label" | translate
+                }}</span>
+                <div class="font-size-description">
+                  {{
+                    "etl_configuration.third.section.description" | translate
+                  }}
+                </div>
+              </ng-template>
+              <byte-ec-source-test [stepper]="stepper"></byte-ec-source-test>
+            </mat-step>
+            <mat-step state="summary">
+              <ng-template matStepLabel>
+                <span class="font-bold">{{
+                  "etl_configuration.fourth.section.label" | translate
+                }}</span>
+                <div class="font-size-description">
+                  {{
+                    "etl_configuration.fourth.section.description" | translate
+                  }}
+                </div>
+              </ng-template>
+              <byte-ec-summary [stepper]="stepper"></byte-ec-summary>
+            </mat-step>
+
+            <ng-template matStepperIcon="edit">
+              <mat-icon>edit</mat-icon>
+            </ng-template>
+            <ng-template matStepperIcon="format">
+              <i class="fa fa-sliders"></i>
+            </ng-template>
+            <ng-template matStepperIcon="test">
+              <i class="fa fa-upload"></i>
+            </ng-template>
+            <ng-template matStepperIcon="summary">
+              <mat-icon>done_all</mat-icon>
+            </ng-template>
+          </mat-horizontal-stepper>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

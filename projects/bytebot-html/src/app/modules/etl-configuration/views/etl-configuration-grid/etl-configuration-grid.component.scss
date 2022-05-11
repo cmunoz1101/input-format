@@ -1,0 +1,363 @@
+$fontcolor: #676a6c;
+.content-vertical-bar {
+  margin-left: 10px;
+  margin-right: -10px;
+  button {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 5px;
+    display: block;
+    .mat-button-wrapper {
+      padding: 0px !important;
+    }
+    i {
+      margin-top: -6px;
+      font-size: 14px;
+      color: $fontcolor;
+    }
+    i:hover {
+      color: #1c84c6;
+    }
+  }
+}
+.grid-content {
+  width: 100%;
+}
+
+.addParameter {
+  text-align: center;
+}
+
+.app-loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.app-loading .spinner {
+  height: 330px;
+  width: 330px;
+  animation: rotate 2s linear infinite;
+  transform-origin: center center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.content {
+  width: 100%;
+  padding-right: 0px !important;
+  border: #ffffff;
+  .grid-container,
+  .filter-panel {
+    width: 100%;
+    .crud-table {
+      width: 100%;
+    }
+  }
+  .filter-panel {
+    margin-bottom: 10px;
+  }
+  .toolbar-option {
+    margin-left: 10px;
+    margin-right: -10px;
+  }
+}
+
+.grid-ibox-content {
+  width: 100%;
+}
+
+.grid-ibox-content-options {
+  width: calc(100% - 35px);
+}
+
+.btn-actions {
+  .btn {
+    font-size: 10px;
+    white-space: nowrap;
+    z-index: 100;
+  }
+}
+
+.spinner-container {
+  height: 100%;
+  width: 100%;
+  padding-top: 50px;
+  position: fixed;
+}
+
+.spinner-container {
+  height: 100%;
+  width: 100%;
+  padding-top: 50px;
+  position: fixed;
+}
+
+.spinner-container mat-spinner {
+  margin: -10px auto 0 auto;
+}
+
+th.mat-column-actions {
+  width: 1px !important;
+  padding-right: 0px !important;
+}
+
+td.mat-column-actions {
+  padding-right: 20px !important;
+  cursor: default !important;
+}
+
+td {
+  vertical-align: middle !important;
+  color: $fontcolor;
+  font-size: 12px;
+}
+
+th {
+  vertical-align: middle !important;
+}
+
+tr.mat-header-row {
+  height: 50px !important;
+}
+
+tr.mat-footer-row,
+tr.mat-row:not(.inner-detail-row) {
+  height: 40px;
+}
+
+.table-toolbar {
+  right: 10px;
+  top: 10px;
+  button {
+    font-size: 12px;
+  }
+}
+
+.status-button-bar {
+  button {
+    font-size: 16px;
+  }
+  padding-top: 8px;
+  padding-left: 15px;
+}
+
+.mat-raised-button {
+  padding: 0px 10px;
+}
+
+.icon-centered-button span.mat-button-wrapper {
+  display: flex;
+}
+
+.icon-centered-button mat-icon {
+  font-size: 15px;
+  padding-top: 2px;
+}
+
+::ng-deep .mat-sort-header-arrow {
+  visibility: hidden;
+}
+
+::ng-deep .mat-sort-header-button {
+  .mat-icon {
+    padding-left: 10px;
+    font-size: 12px;
+    padding-top: 5px;
+  }
+}
+
+@media (min-width: 576px) {
+  ::ng-deep .d-sm-block {
+    display: table-cell !important;
+  }
+}
+
+@media (max-width: 576px) {
+  ::ng-deep .mat-paginator-page-size-label {
+    display: none !important;
+  }
+}
+
+
+tr.inner-detail-row {
+  height: 0;
+  .mat-column-expandedDetail {
+    padding: 0 10px;
+  }
+}
+.box-title {
+    padding: 6px 0px;
+}
+
+.box-title h5 {
+    font: 400 calc(14px * .83)/20px Roboto,"Helvetica Neue",sans-serif;
+	display: inline-block;
+	font-size: 14px;
+	margin: 0 0 7px;
+	padding: 0;
+	text-overflow: ellipsis;
+	float: none;
+}
+
+.fa-check {
+    color: green;
+}
+.fa-exclamation-triangle{
+    color: red;
+}
+.inner-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  padding-right: 0px !important;
+  .grid-container,
+  .filter-panel {
+    .crud-table {
+      margin-bottom: 0px;
+      width: 100%;
+    }
+  }
+  .filter-panel {
+    margin-bottom: 10px;
+  }
+  .toolbar-option {
+    margin-left: 10px;
+    margin-right: -10px;
+  }
+}
+
+.content-vertical-bar {
+  margin-left: 10px;
+  margin-right: -10px;
+  button {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 5px;
+    display: block;
+    .mat-button-wrapper {
+      padding: 0px !important;
+    }
+    i {
+      margin-top: -6px;
+      font-size: 14px;
+      color: $fontcolor;
+    }
+    i:hover {
+      color: #1c84c6;
+    }
+  }
+}
+
+tr.inner-detail-row {
+  td {
+    border-bottom: 1px solid #dee2e6;
+    border-top: 0px;
+  }
+}
+
+.mat-row:hover {
+  cursor: pointer;
+  background-color: #f8f9fa;
+}
+
+tr.inner-element-row.odd,
+tr.inner-detail-row.odd {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+tr.inner-element-row.odd:hover,
+tr.inner-detail-row.odd:hover {
+  cursor: pointer;
+  background-color: #f8f9fa;
+}
+
+
+
+
+tr.inner-element-row-expanded td {
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+.additional-options-section {
+  padding: 0;
+  width: 100%;
+  display: inline-grid;
+  button {
+    margin: 1px 0;
+    color: inherit;
+    font-size: inherit;
+    border-radius: 0px;
+  }
+}
+
+::ng-deep .mat-menu-item {
+  padding: 0 10px;
+}
+
+@media (min-width: 992px) {
+  .d-t-lg-block {
+    display: table-cell !important;
+  }
+}
+
+.spaceToCheckBox {
+  margin-left: 15px;
+}
+
+.form-status-bar {
+  padding: 10px 0;
+  button {
+    color: #ffffff;
+    font-size: 12px;
+    float: right;
+    font-weight: 500;
+    i {
+      padding-right: 5px;
+    }
+  }
+}
+
+.form-content {
+  margin: 10px 20px;
+}
+
+.input-together {
+  padding: 0px;
+}
+
+.avatar img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+
+
+.ag-cell-focus,.ag-cell-no-focus{
+  border:none !important;
+}
+/* This CSS is to not apply the border for the column having 'no-border' class */
+.no-border.ag-cell:focus{
+  border:none !important;
+  outline: none;
+}
+
+.custom-tooltip {
+  text-align: center;
+ background-color: transparent;
+  position: absolute;
+  z-index: 99;
+}

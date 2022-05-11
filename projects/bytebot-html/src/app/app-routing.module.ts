@@ -24,6 +24,9 @@ const routes: Routes = [
       {
         path: 'input-configuration', data: { breadcrumb: 'Configuración de insumos' }, canLoad: [AuthGuard],
         loadChildren: () => import('./modules/input-configuration/input-configuration.module').then(m => m.InputConfigurationModule)
+      },{
+        path: 'etl_configuration', canLoad: [AuthGuard],
+        loadChildren: () => import('./modules/etl-configuration/etl-configuration.module').then(m => m.EtlConfigurationModule)
       }
     ],
     canActivate: [AuthGuard]

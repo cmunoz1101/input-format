@@ -1,0 +1,71 @@
+.footer-bar {
+    border-top-color: #e7eaec;
+    border-style: solid solid none;
+    border-width: 1px 0;
+    background-color: #fff;
+  
+    button {
+      margin: 10px 5px 0px 0px;
+      font-size: 12px;
+    }
+}
+
+.title-with-button {
+  vertical-align: middle;
+  display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    justify-content: space-between;
+
+    button {
+      background-color: rgba(0, 0, 0, 0.02);
+      font-size: 16px;
+      border: none;
+      margin: 0;
+      margin-top: 7px;
+      padding: 0;
+    }
+}
+
+
+.section-viewer-wrapper {
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  margin: 4px 0 15px;
+  padding-bottom: 5px;
+  height: 100%;
+}
+
+.section-viewer-title {
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  padding: 12px 20px 12px 20px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.54);
+  background:none;
+  display: flex;
+  justify-content: space-between;
+
+  .mat-icon-button {
+    line-height: 0px !important;
+  }
+}
+
+.actions-box {
+  margin: 0;
+  padding: 0;
+}
+.actions-box button {
+  background: none;
+  font-size: 16px;
+  margin: 0 5px;
+  border: none;
+  padding: 0;
+}
+
+::ng-deep .mat-menu-item {
+  padding: 0 10px;
+}
+
+::ng-deep .menu-without-scroll {
+  overflow: hidden !important;
+}

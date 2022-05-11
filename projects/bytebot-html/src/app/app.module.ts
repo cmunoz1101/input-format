@@ -42,6 +42,7 @@ import { CustomProgramsFakeBackendInterceptor } from './interceptors/custom-prog
 import { AgentFakeBackendInterceptor } from './interceptors/agent-fake-backend.interceptor';
 import { OperativeDashboardFakeBackendInterceptor } from './interceptors/operative-dashboard-fake-backend.interceptor';
 import { CustomErrorHandlerInterceptor } from './interceptors/custom-error-handler.interceptor';
+import { EtlConfigurationFakeBackend } from './interceptors/etl-configuration-fake-backend.interceptor';
 
 const INITIAL_LANGUAGE = 'es';
 
@@ -56,7 +57,9 @@ export function createTranslateLoader(http: HttpClient) {
       { prefix: './assets/i18n/layouts/', suffix: '.json' },
       { prefix: './assets/i18n/gallery/', suffix: '.json' },
       { prefix: './assets/i18n/security/', suffix: '.json' },
-      { prefix: './assets/i18n/settings/', suffix: '.json' }
+      { prefix: './assets/i18n/settings/', suffix: '.json' },
+      { prefix: './assets/i18n/etl-configuration/', suffix: '.json' }
+      
     ]);
 }
 
@@ -128,6 +131,7 @@ export function createTranslateLoader(http: HttpClient) {
     { provide: HTTP_INTERCEPTORS, useClass: SettingsFakeBackendInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: CustomProgramsFakeBackendInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AgentFakeBackendInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: EtlConfigurationFakeBackend, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: OperativeDashboardFakeBackendInterceptor, multi: true },
 
 

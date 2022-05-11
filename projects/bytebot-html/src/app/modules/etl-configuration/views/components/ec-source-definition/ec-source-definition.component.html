@@ -1,0 +1,68 @@
+<div class="panel-viewer-wrapper">
+  <div class="panel-viewer-title">
+    <i class="fa fa-info-circle"></i>
+    {{ "etl_configuration.first.section.label" | translate }}
+  </div>
+
+  <div class="panel-viewer-body">
+    <div class="row">
+      <div class="col-12">
+        <div
+          style="
+            width: 100%;
+            height: 100px;
+            background-color: rgba(0, 0, 0, 0.03);
+            border: solid 1px rgba(0, 0, 0, 0.07);
+          "
+        >
+          <label for="avatar">Choose a profile picture:</label>
+
+          <input
+            type="file"
+            [formControl]="inputFile"
+            (change)="onInputFile($event)"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <div class="title-with-button">
+          <h4>{{ "etl_configuration.drag_drop_list.label" | translate }}</h4>
+          <button>
+            <i class="fa fa-plus" (click)="onAddField()"></i>
+          </button>
+        </div>
+        <byte-drag-drop-list
+          #dropList
+          (dataChanged)="onDataChanged($event)"
+          (configuration)="onConfigurationHandler($event)"
+          [mode]="dragDropMode"
+        ></byte-drag-drop-list>
+      </div>
+      <div class="col-10">
+        <h4>{{ "etl_configuration.source_preview.label" | translate }}</h4>
+        <byte-source-preview-grid
+          #listSource
+          (dataChanged)="onDataChanged($event)"
+        ></byte-source-preview-grid>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="row">
+      <div class="col-12">
+        <button
+          mat-stroked-button
+          [disabled]="isDirty()"
+          (click)="next()"
+          class="pull-right"
+        >
+          <span class="pr-1">{{ "btn.next" | translate }}</span>
+          <i class="fa fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

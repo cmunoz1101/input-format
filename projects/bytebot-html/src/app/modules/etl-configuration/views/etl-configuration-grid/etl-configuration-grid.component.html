@@ -1,0 +1,187 @@
+<div class="mail-box-header detail-header" tooltip-host>
+  <div class="row">
+    <div class="col-xl-12" style="display: flex">
+      <div class="box-title">
+        <h5 style="display: inline">
+          {{ "etl_configuration.title" | translate }}
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mail-box-content" style="padding: 10px 20px">
+  <div class="content">
+    <div class="grid-box-content-options grid-content">
+      <div class="filter-panel mat-elevation-z8">
+        <xdf-ngx-tags-input
+          class="input-lg"
+          [tags]="filterTags"
+          [fields]="filterFields"
+          (filterEvent)="onFilter($event)"
+        >
+        </xdf-ngx-tags-input>
+      </div>
+      <div class="grid-container mat-elevation-z8">
+        <table
+          #etlConfigurationTable
+          class="crud-table table"
+          mat-table
+          multiTemplateDataRows
+          [dataSource]="dataSource"
+          matSort
+          #sort
+          matSortDisableClear
+          #paginator
+        >
+          <ng-container
+            matColumnDef="{{ template.name }}"
+            *ngFor="let template of columnTemplateArray"
+          >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              {{ template.title | translate }}
+              <div *ngIf="template.sortable">
+                <mat-icon *ngIf="sortColumn === template?.name">
+                  <i
+                    class="fa fa-sort-amount-desc"
+                    *ngIf="sortDirection === 'desc'"
+                  ></i>
+                  <i
+                    class="fa fa-sort-amount-asc"
+                    *ngIf="sortDirection === 'asc'"
+                  ></i>
+                </mat-icon>
+              </div>
+            </th>
+            <td
+              mat-cell
+              *matCellDef="let item"
+              [style.width]="
+                template.style['width'] ? template.style['width'] : ''
+              "
+              (click)="view(item)"
+            >
+              <span
+                *ngIf="
+                  template?.name !== 'status' &&
+                  template?.name !== 'validation' &&
+                  template?.name !== 'draftId'
+                "
+                >{{ item[template["name"]] }}</span
+              >
+              <span
+                *ngIf="template?.name === 'status'"
+                [ngClass]="
+                  item[template['name']] == 'V'
+                    ? template.styles['V']
+                    : item[template['name']] == 'C'
+                    ? template.styles['C']
+                    : template.styles['B']
+                "
+              >
+                {{
+                  item[template["name"]] == "V"
+                    ? (template.values["V"] | translate)
+                    : item[template["name"]] == "C"
+                    ? (template.values["C"] | translate)
+                    : (template.values["B"] | translate)
+                }}
+              </span>
+              <mat-icon *ngIf="template?.name === 'validation'">
+                <i
+                  class="fa"
+                  [ngClass]="
+                    item[template['name']] == 'V'
+                      ? template.styles['V']
+                      : template.styles['I']
+                  "
+                >
+                </i>
+              </mat-icon>
+              <mat-icon
+                *ngIf="template?.name === 'draftId' && item[template['name']]"
+                (mouseenter)="
+                  onSkillMouseEnter($event, { id: item[template['name']] })
+                "
+              >
+                <i class="fa fa-file"> </i>
+              </mat-icon>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td
+              mat-cell
+              *matCellDef="let item"
+              class="text-center"
+              style="width: 350px"
+            >
+              <div class="btn-group btn-actions">
+                <button
+                  class="btn btn-default btn-sm"
+                  (click)="edit(item)"
+                  type="button"
+                >
+                  <i class="fa fa-edit"></i>
+                  <span
+                    class="visible-md-inline visible-lg-inline visible-xl-inline"
+                  >
+                    {{ "btn.edit" | translate }}
+                  </span>
+                </button>
+
+                <button
+                  class="btn btn-default btn-sm"
+                  (click)="delete(item)"
+                  type="button"
+                >
+                  <i class="fa fa-delete"></i>
+                  <span
+                    class="visible-md-inline visible-lg-inline visible-xl-inline"
+                  >
+                    {{ "btn.delete" | translate }}
+                  </span>
+                </button>
+              </div>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr
+            mat-row
+            class="inner-element-row"
+            *matRowDef="let row; columns: displayedColumns; let i = dataIndex"
+            [ngClass]="{ odd: this.isOdd(i) }"
+          ></tr>
+        </table>
+        <div class="status-button-bar pull-left">
+          <button
+            type="button"
+            mat-icon-button
+            matTooltip="{{ 'action.grid.refresh' | translate }}"
+            (click)="onRefresh()"
+          >
+            <i class="fa fa-refresh"></i>
+          </button>
+        </div>
+        <mat-paginator
+          #paginator
+          [pageSize]="5"
+          [length]="pagination?.totalItems"
+          [pageSizeOptions]="[5, 10]"
+          [pageIndex]="pagination?.currentPage"
+        >
+        </mat-paginator>
+      </div>
+    </div>
+    <div class="toolbar-option">
+      <button
+        color="default"
+        mat-mini-fab
+        matTooltip="{{ 'btn.new' | translate }}"
+        (click)="create()"
+      >
+        <span><i class="fa fa-file-o"></i></span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -5,5 +5,6 @@
     { "system_settings_password": "./assets/definitions/setting-definitions/system-settings-password.json" },
     { "system_settings_userpolicy": "./assets/definitions/setting-definitions/system-settings-userpolicy.json" },
     { "application": "./assets/definitions/setting-definitions/application.json" },
+    { "etl_configuration": "./assets/definitions/etl-definitions/etl.json" },
     { "valpos": "./assets/definitions/setting-definitions/valpos.json"}
 ]

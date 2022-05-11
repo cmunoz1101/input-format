@@ -1,0 +1,217 @@
+<div class="popup-general">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="popup-title">
+        <img src="{{ logoSrc }}" with="25" height="25" />
+        <span class="header-popup-text">{{ title | translate }}</span>
+
+        <div class="pull-right">
+          <button type="button" class="close" (click)="close()">×</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <form [formGroup]="form" autocomplete="off">
+    <mat-dialog-content class="popup-content">
+      <div class="row">
+        <div class="col-lg-12" style="padding: 0 10px">
+          {{ section.label | translate }}
+        </div>
+        <div class="popup-content-wrapper" *ngIf="section.type == 'exprValid'">
+          <div class="row">
+            <div class="form-group col-xl-12">
+              <mat-form-field>
+                <mat-label> {{ section.config.label | translate }}: </mat-label>
+                <textarea
+                  matInput
+                  formControlName="exprValid"
+                  [formGroup]="form"
+                  rows="5"
+                ></textarea>
+
+                <mat-error>{{
+                  "message.error.required"
+                    | translate: { label: (section.config.label | translate) }
+                }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div
+          class="popup-content-wrapper"
+          *ngIf="section.type == 'dependencies'"
+        >
+          <div class="row">
+            <div class="form-group col-xl-12">
+              <mat-form-field>
+                <mat-label> {{ section.config.label | translate }}: </mat-label>
+                <mat-select
+                  formControlName="dependencies"
+                  [formGroup]="form"
+                  multiple
+                >
+                  <mat-option
+                    *ngFor="let dependency of section.config.list"
+                    [value]="dependency"
+                    >{{ dependency }}</mat-option
+                  >
+                </mat-select>
+                <mat-error>{{
+                  "message.error.required"
+                    | translate: { label: (section.config.label | translate) }
+                }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div
+          class="popup-content-wrapper"
+          *ngIf="section.type == 'preProcessor' || section.type == 'processor'"
+        >
+          <div class="row">
+            <div class="form-group col-3">
+              <div class="title-with-button">
+                <h4>{{ "Lista de funciones" }}</h4>
+                <button>
+                  <i class="fa fa-plus" (click)="onAddFunction()"></i>
+                </button>
+              </div>
+              <div class="list">
+                <div
+                  class="list-box"
+                  [class.active]="selectedPosition == i"
+                  *ngFor="let item of section.config.functions; let i = index"
+                  (click)="onSelect(i)"
+                >
+                  <div unselectable="on">
+                    {{
+                      item.functionName != ""
+                        ? i + 1 + ". " + item.functionName
+                        : "Nueva función"
+                    }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-9">
+              <div class="section-viewer-wrapper">
+                <div class="section-viewer-title">
+                  {{ "Edición de función" }}
+                  <button
+                    class="action-button"
+                    (click)="onDelete()"
+                    *ngIf="this.section.config.functions.length != 1"
+                  >
+                    <i class="fa fa-close"></i>
+                  </button>
+                </div>
+
+                <div
+                  style="padding: 0px 25px 10px 25px"
+                  *ngIf="section.config.functions.length != 0"
+                >
+                  <div class="row">
+                    <div class="col-6">
+                      <xdf-input
+                        name="functionName"
+                        type="text"
+                        placeholder="{{ 'Función' }}"
+                        [formGroup]="form"
+                        [options]="{ maxLength: 80, showLength: true }"
+                      >
+                      </xdf-input>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <xdf-input
+                        name="constantParam"
+                        type="text"
+                        placeholder="{{ 'Parámetro constante' }}"
+                        [formGroup]="form"
+                        [options]="{ maxLength: 80, showLength: true }"
+                      >
+                      </xdf-input>
+                      <mat-form-field>
+                        <mat-label> {{ "Parámetro variable" }}: </mat-label>
+                        <mat-select
+                          formControlName="dynamicParam"
+                          [formGroup]="form"
+                        >
+                          <mat-option
+                            *ngFor="let param of section.config.list"
+                            [value]="param"
+                            >{{ param }}</mat-option
+                          >
+                        </mat-select>
+                        <mat-error>{{
+                          "message.error.required"
+                            | translate: { label: "Parámetro variable" }
+                        }}</mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-1">
+                      <button
+                        class="action-params"
+                        (click)="addConstantParam()"
+                      >
+                        <i class="fa fa-arrow-circle-right"></i>
+                      </button>
+                      <br />
+                      <button class="action-params" (click)="addDynamicParam()">
+                        <i class="fa fa-arrow-circle-right"></i>
+                      </button>
+                    </div>
+                    <div class="col-5">
+                      <div class="list">
+                        <div
+                          class="list-box"
+                          *ngFor="
+                            let item of section.config.functions[
+                              selectedPosition
+                            ].params;
+                            let i = index
+                          "
+                        >
+                          <div unselectable="on">
+                            {{ item }}
+                          </div>
+                          <button
+                            class="action-button"
+                            (click)="onDeleteParam(i)"
+                          >
+                            <i class="fa fa-minus-square-o"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-dialog-content>
+  </form>
+
+  <div class="popup-footer" *ngIf="mode != 'view'">
+    <div class="pull-right">
+      <button
+        class="btn btn-primary"
+        mat-stroked-button
+        [disabled]="checkForm()"
+        (click)="save()"
+        [disabled]="buttonSave"
+      >
+        <i class="fa fa-save"></i>&nbsp;
+        <span class="pr-1">{{ "btn.save" | translate }}</span>
+      </button>
+      <button mat-stroked-button (click)="close()" style="margin-left: 10px">
+        <i class="fa fa-ban"></i>
+        <span class="pl-1">{{ "btn.cancel" | translate }}</span>
+      </button>
+    </div>
+  </div>
+</div>

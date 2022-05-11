@@ -1,0 +1,30 @@
+<div class="drag-list">
+  <div
+    class="drag-box"
+    [class.active]="selectedPosition == item.position"
+    *ngFor="let item of items"
+    (click)="onSelect(item.position)"
+  >
+    <div unselectable="on">
+      <!-- <i *ngIf="item.dataType == 'date'" class="fa fa-calendar"></i>
+        <i *ngIf="item.dataType == 'number'" class="fa fa-hashtag"></i>
+        <i
+          *ngIf="item.dataType != 'date' && item.dataType != 'number'"
+          class="fa fa-font"
+        ></i> -->
+      {{
+        item.identifier !== ""
+          ? item.identifier
+          : "Nuevo campo " + item.position
+      }}
+    </div>
+    <div>
+      <i *ngIf="item.dataType == 'DATE'" class="fa fa-calendar"></i>
+      <i *ngIf="item.dataType == 'DECIMAL'" class="fa fa-hashtag"></i>
+      <i *ngIf="item.dataType == 'LONG'" class="fa fa-hashtag"></i>
+      <i *ngIf="item.dataType == 'STRING'" class="fa fa-font"></i>
+      <i *ngIf="item.dynamicField == true" class="fa fa-random"></i>
+      {{ item.name }}
+    </div>
+  </div>
+</div>

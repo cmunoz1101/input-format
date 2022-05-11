@@ -1,0 +1,29 @@
+<div cdkDropList class="drag-list" (cdkDropListDropped)="drop($event)">
+  <div class="drag-box" *ngFor="let item of items; let i = index" cdkDrag>
+    <div class="drag-placeholder" *cdkDragPlaceholder></div>
+    <div>
+      <i *ngIf="item.type == 'DATE'" class="fa fa-calendar"></i>
+      <i *ngIf="item.type == 'DECIMAL'" class="fa fa-hashtag"></i>
+      <i *ngIf="item.type == 'LONG'" class="fa fa-hashtag"></i>
+      <i *ngIf="item.type == 'STRING'" class="fa fa-font"></i>
+      {{ item.name }}
+    </div>
+
+    <div *ngIf="this.mode == 'fixed'" class="actions-box">
+      <button>
+        <i
+          class="fa fa-pencil-square-o"
+          style="color: blue"
+          (click)="onEdit()"
+        ></i>
+      </button>
+      <button>
+        <i
+          class="fa fa-minus-square-o"
+          style="color: red"
+          (click)="onDelete(item.name)"
+        ></i>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,213 @@
+<form [formGroup]="form" autocomplete="off">
+  <div class="panel-viewer-body">
+    <div class="row">
+      <div class="form-group col-xl-6">
+        <xdf-input
+          name="identifier"
+          type="text"
+          [required]="true"
+          placeholder="fields_form.identifier.placeholder"
+          [formGroup]="form"
+          [options]="{ maxLength: 80, showLength: true }"
+        >
+        </xdf-input>
+      </div>
+      <div class="form-group col-xl-6">
+        <mat-checkbox formControlName="optional">
+          {{ "fields_form.optional.placeholder" | translate }}
+        </mat-checkbox>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-xl-12">
+        <xdf-input
+          name="description"
+          type="text"
+          [required]="true"
+          placeholder="fields_form.description.placeholder"
+          [formGroup]="form"
+          [options]="{ maxLength: 200, showLength: true }"
+        >
+        </xdf-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-xl-6">
+        <xdf-select
+          name="dataType"
+          [hidden]="field.dynamicField"
+          [values]="dataTypes"
+          label="fields_form.dataType.label"
+          [formGroup]="form"
+          [options]="{
+            sourceValue: 'value',
+            sourceLabel: 'label'
+          }"
+        >
+        </xdf-select>
+      </div>
+      <div class="form-group col-xl-6">
+        <xdf-input
+          name="maxLength"
+          [hidden]="field.dynamicField"
+          type="number"
+          placeholder="fields_form.maxLength.placeholder"
+          [formGroup]="form"
+          [options]="{ maxLength: 2, showLength: false }"
+        >
+        </xdf-input>
+      </div>
+    </div>
+    <div
+      class="row"
+      *ngIf="!field.dynamicField && !checkObjectFalse(advancedValidation)"
+    >
+      <div class="col-xl-12">
+        <div class="section-viewer-wrapper">
+          <div class="section-viewer-title">
+            {{ "fields_form.advanced_validation.label" | translate }}
+          </div>
+          <div *ngIf="advancedValidation.format">format</div>
+          <hr *ngIf="advancedValidation.format" />
+          <div *ngIf="advancedValidation.posValues">posValues</div>
+          <hr *ngIf="advancedValidation.posValues" />
+          <div *ngIf="advancedValidation.equivIntern">equivIntern</div>
+          <hr *ngIf="advancedValidation.equivIntern" />
+          <div *ngIf="advancedValidation.exprValid" class="row validationBox">
+            <div class="col-3">Expresión de validación:</div>
+            <div class="col-7">
+              <div class="validationComponent" style="word-wrap: break-word">
+                {{ field.regexValidation }}
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="actions-box">
+                <button>
+                  <i
+                    class="fa fa-pencil"
+                    (click)="onEditValidation('exprValid')"
+                  ></i>
+                </button>
+                <button>
+                  <i
+                    class="fa fa-times"
+                    (click)="onDeleteValidation('exprValid')"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr *ngIf="advancedValidation.exprValid" />
+        </div>
+      </div>
+    </div>
+    <div
+      class="row"
+      *ngIf="field.dynamicField && !checkObjectFalse(dymamicAdvancedValidation)"
+    >
+      <div class="col-xl-12">
+        <div class="section-viewer-wrapper">
+          <div class="section-viewer-title">
+            {{ "fields_form.advanced_validation.label" | translate }}
+          </div>
+          <div *ngIf="dymamicAdvancedValidation.format">format</div>
+          <hr *ngIf="dymamicAdvancedValidation.format" />
+          <div
+            *ngIf="dymamicAdvancedValidation.dependencies"
+            class="row validationBox"
+          >
+            <div class="col-3">Dependencias:</div>
+            <div class="col-7">
+              <div class="validationComponent">
+                <div *ngFor="let dependency of field.dependsOn">
+                  {{ dependency }}
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="actions-box">
+                <button>
+                  <i
+                    class="fa fa-pencil"
+                    (click)="onEditValidation('dependencies')"
+                  ></i>
+                </button>
+                <button>
+                  <i
+                    class="fa fa-times"
+                    (click)="onDeleteValidation('dependencies')"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr *ngIf="dymamicAdvancedValidation.dependencies" />
+          <div
+            *ngIf="dymamicAdvancedValidation.preProcessor"
+            class="row validationBox"
+          >
+            <div class="col-3">Pre procesar:</div>
+            <div class="col-7">
+              <div class="validationComponent">
+                <div *ngFor="let f of field.preProcessor">
+                  {{ f.functionName }}
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="actions-box">
+                <button>
+                  <i
+                    class="fa fa-pencil"
+                    (click)="onEditValidation('preProcessor')"
+                  ></i>
+                </button>
+                <button>
+                  <i
+                    class="fa fa-times"
+                    (click)="onDeleteValidation('preProcessor')"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr *ngIf="dymamicAdvancedValidation.preProcessor" />
+
+          <div *ngIf="dymamicAdvancedValidation.equivIntern">equivIntern</div>
+          <hr *ngIf="dymamicAdvancedValidation.equivIntern" />
+
+          <div
+            *ngIf="dymamicAdvancedValidation.processor"
+            class="row validationBox"
+          >
+            <div class="col-3">Procesar:</div>
+            <div class="col-7">
+              <div class="validationComponent">
+                <div *ngFor="let f of field.processor">
+                  {{ f.functionName }}
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="actions-box">
+                <button>
+                  <i
+                    class="fa fa-pencil"
+                    (click)="onEditValidation('processor')"
+                  ></i>
+                </button>
+                <button>
+                  <i
+                    class="fa fa-times"
+                    (click)="onDeleteValidation('processor')"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr *ngIf="dymamicAdvancedValidation.processor" />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

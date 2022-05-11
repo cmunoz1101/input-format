@@ -1,0 +1,13 @@
+<ag-grid-angular
+  style="width: 100%"
+  class="ag-theme-material mat-elevation-z8"
+  [columnDefs]="columnDefs"
+  [rowData]="rowData"
+  [pagination]="pagination"
+  [paginationPageSize]="paginationPageSize"
+  [stopEditingWhenCellsLoseFocus]="true"
+  (gridReady)="onGridReady($event)"
+  (cellValueChanged)="onDataChanged()"
+  [rowStyle]="rowStyle"
+  [getRowStyle]="getRowStyle"
+></ag-grid-angular>

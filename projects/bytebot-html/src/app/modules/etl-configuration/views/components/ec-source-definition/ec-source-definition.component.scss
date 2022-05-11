@@ -1,0 +1,35 @@
+.footer-bar {
+    border-top-color: #e7eaec;
+    border-style: solid solid none;
+    border-width: 1px 0;
+    background-color: #fff;
+  
+    button {
+      margin: 10px 5px 0px 0px;
+      font-size: 12px;
+    }
+}
+.row {
+  margin-bottom: 10px;
+}
+
+.title-with-button {
+  vertical-align: middle;
+  display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    justify-content: space-between;
+
+    button {
+      background-color: rgba(0, 0, 0, 0.02);
+      font-size: 16px;
+      border: none;
+      margin: 0;
+      margin-top: 7px;
+      padding: 0;
+    }
+}
+
+
+
+

@@ -1,0 +1,22 @@
+<div
+  class="custom-tooltip shadow"
+  [style.top]="styleTop"
+  [style.left]="styleLeft"
+>
+  <div class="card custom-card" style="width: 18rem">
+    <div class="card-body">
+      <p class="card-text">
+        Existe un borrador del insumo disponible<br />
+        ¿Desea utilizarlo?
+      </p>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="onAccept()"
+        style="float: right"
+      >
+        Aceptar
+      </button>
+    </div>
+  </div>
+</div>

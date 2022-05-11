@@ -1,0 +1,74 @@
+{
+
+    "label.error.field.params": "Validar todos los parametros antes de cambiar de campo",
+
+    "btn.add.format": "Añadir formato",
+    "btn.add.posible_values": "Añadir valores posibles",
+    "btn.add.internal_equiv_intern": "Añadir equiv. internas",
+    "btn.add.expr_valid": "Añadir expr. de validación",
+
+    "btn.add.dependencies": "Añadir dependencias",
+    "btn.add.pre_processor": "Añadir pre procesador",
+    "btn.add.processor": "Añadir procesador",
+
+    
+    "btn.edit.format": "Editar formato",
+    "btn.edit.posible_values": "Editar valores posibles",
+    "btn.edit.internal_equiv_intern": "Editar equiv. internas",
+    "btn.edit.expr_valid": "Editar expr. de validación",
+
+    "btn.edit.dependencies": "Editar dependencias",
+    "btn.edit.pre_processor": "Editar pre procesador",
+    "btn.edit.processor": "Editar procesador",
+
+
+    "breadcrumb.etl_configuration":"Configuración de Insumos",
+    
+    "etl_configuration.title": "Configuración de Insumos",
+
+    "etl_configuration_id_header":"ID",
+    "etl_configuration_description_header":"Objetivos del acuerdo",
+    "etl_configuration_startDate_header":"Fecha inicio",
+    "etl_configuration_endDate_header":"Fecha fin",
+    "etl_configuration_status_header":"Estado",
+    "etl_configuration_validation_header":"Validación",
+    "etl_configuration_draftId_header":"Adicional",
+
+    "etl_configuration.active" : "Activo",
+    "etl_configuration.inactive" : "Inactivo",
+
+    "etl_configuration.valid" : "Valido",
+    "etl_configuration.expired" : "Expirado",
+    "etl_configuration.draft" : "Borrador",
+    
+    "etl_configuration.first.section.label" :"Definición de Insumo",
+    "etl_configuration.first.section.description" :"Defina el insumo y su estructura",
+
+    "etl_configuration.drag_drop_list.label"  : "Listado Campos",
+    "etl_configuration.source_preview.label"  : "Vista de la estructura del insumo",
+
+
+    "etl_configuration.second.section.label" :"Formato de campos",
+    "etl_configuration.second.section.description" :"Defina validaciones, enriquezca campos",
+
+    "fields_form.identifier.placeholder": "Identificador",
+    "fields_form.optional.placeholder": "Opcional",
+    "fields_form.description.placeholder": "Descripción",
+    "fields_form.dataType.label": "Tipo de dato",
+    "fields_form.maxLength.placeholder": "Longitud máxima",
+
+    "fields_form.advanced_validation.label" : "Resumen de validaciones avanzadas",
+
+    "etl_configuration.fields_list.label"  : "Listado Campos",
+    "etl_configuration.fields_form.label"  : "Edición de campo",
+    "etl_configuration.dynamic_fields_form.label"  : "Edición de campo dinámico",
+
+    
+
+    "etl_configuration.third.section.label" :"Probar el Insumo",
+    "etl_configuration.third.section.description" :"Estamos casi listos. Ahora pruebe su configuración.",
+
+    "etl_configuration.fourth.section.label" :"Resumen",
+    "etl_configuration.fourth.section.description" :"Validación de la configuración"
+
+}

@@ -39,5 +39,15 @@
     "singlePath": "input-configuration",
     "isProgram": true,
     "children": []
+  },
+  {
+    "id": 34,
+    "name": "etl_configuration",
+    "label": "menu.etl_configuration",
+    "icon": "<i class=\"fa fa-address-book\"></i>",
+    "fullPath": "/etl_configuration",
+    "singlePath": "etl_configuration",
+    "isProgram": true,
+    "children": []
   }
 ]

@@ -7,5 +7,6 @@
     "estados",
     "motivos",
     "categoria_motivo",
-    "INPUT_CONFIGURATION"
+    "INPUT_CONFIGURATION",
+    "etl_configuration"
 ]

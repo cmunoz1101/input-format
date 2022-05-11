@@ -1,0 +1,70 @@
+<div class="popup-general">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="popup-title">
+        <img src="{{ logoSrc }}" with="25" height="25" />
+        <span class="header-popup-text">{{ "Activar borrador" }}</span>
+
+        <div class="pull-right">
+          <button type="button" class="close" (click)="close()">×</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <form [formGroup]="form" autocomplete="off">
+    <mat-dialog-content class="popup-content">
+      <div class="popup-content-wrapper">
+        <div class="row">
+          <div class="col-xl-12">
+            <mat-radio-group
+              formControlName="option"
+              style="display: flex; flex-direction: column"
+            >
+              <mat-radio-button value="now">Actualizar ahora</mat-radio-button>
+              <mat-radio-button value="after"
+                >Programar actualización</mat-radio-button
+              >
+            </mat-radio-group>
+          </div>
+        </div>
+        <div class="row" *ngIf="form.value['option'] == 'after'">
+          <div class="col-xl-8">
+            <mat-form-field>
+              <mat-label>Fecha de inicio de vigencia</mat-label>
+              <input
+                matInput
+                formControlName="startDate"
+                [matDatepicker]="startDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="startDate"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #startDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-xl-2"></div>
+        </div>
+      </div>
+    </mat-dialog-content>
+  </form>
+
+  <div class="popup-footer" *ngIf="mode != 'view'">
+    <div class="pull-right">
+      <button
+        class="btn btn-primary"
+        mat-stroked-button
+        [disabled]="form.invalid"
+        (click)="save()"
+      >
+        <i class="fa fa-save"></i>&nbsp;
+        <span class="pr-1">{{ "btn.save" | translate }}</span>
+      </button>
+      <button mat-stroked-button (click)="close()" style="margin-left: 10px">
+        <i class="fa fa-ban"></i>
+        <span class="pl-1">{{ "btn.cancel" | translate }}</span>
+      </button>
+    </div>
+  </div>
+</div>

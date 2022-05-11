@@ -17,5 +17,6 @@
     "menu.dashboard.operative": "Indicadores operativos",
     "menu.dashboard.customer.interaction": "Indicadores de interacción",
 
+    "menu.etl_configuration" : "Configuración de insumos",
     "menu.input.configuration": "Configuración de insumos"
 }

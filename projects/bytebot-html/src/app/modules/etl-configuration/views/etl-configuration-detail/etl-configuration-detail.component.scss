@@ -1,0 +1,49 @@
+::ng-deep .info-block {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
+    min-height: 300px;
+}
+
+::ng-deep .footer-bar {
+    margin: 0 10px 10px;
+}
+
+::ng-deep .border-all {
+    border: solid 1px #d0c9c9ab;
+}
+
+::ng-deep .panel-viewer-wrapper {
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    margin: 5px 5px 10px;
+}
+
+.font-size-description {
+    white-space: normal;
+    font-size: 11px;
+}
+
+::ng-deep .mat-step-header[aria-selected="true"] {
+    background: #c3ccff !important;
+    border-radius: 9px !important;
+}
+
+::ng-deep .mat-horizontal-stepper-header {
+    pointer-events: none !important;
+}
+
+::ng-deep .mat-card {
+    border-left: solid 0px #3f51b5;
+    transition: border-left 0.125s ease-in !important;
+
+    &.active {
+        border-left: solid 5px #3f51b5;
+    }
+}
+
+::ng-deep .panel-viewer-title > .mat-icon {
+    height: 0px;
+    width: 15px;
+    vertical-align: sub;
+}
