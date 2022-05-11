@@ -13,15 +13,15 @@ import { first } from 'rxjs/operators';
 })
 export class InputStructDialogComponent implements OnInit {
 
-  /* Componente popup para seleccionar estrategia de estructura.
-     ===========================================================
+  /* Componente popup para seleccionar estrategia.
+     =============================================
    Parámetros de entrada:
     1. Título del popup
     2. Máximo de registros de lectura.
     3. Separadores de línea.
    Parámetros de salida: 
     1. Estrategia: E=Ingreso libre, F=Según archivo base.
-    2. Contenido: Sí estrategia es F entonces se retornará un arreglo con los n primeros registros del archivo leído. Si no retorna undefined.
+    2. Contenido: Sí estrategia es F entonces retornará un arreglo con los n primeras tramas del archivo leído. Sino retorna undefined.
   */
 
   title: string;

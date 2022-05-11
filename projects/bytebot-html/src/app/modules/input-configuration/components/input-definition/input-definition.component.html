@@ -1,1 +1,14 @@
-<p>input-definition works!</p>
+<!-- Este botón para elegir la estrategia de la estructura del insumo, sólo debe mostrarse cuando es un nuevo registro (mode === 'new')-->
+<mat-card *ngIf="mode === 'new'" style="height: 400px; overflow: auto;">
+    <div class="center">
+        <mat-card-content>
+            <div class="row">
+                <h4>{{ 'label.strategy.button' | translate }}&nbsp;
+                    <button mat-stroked-button class="button-icon" type="button" (click)="openDialogInputStruct()">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </h4>
+            </div>
+        </mat-card-content>
+    </div>
+</mat-card>

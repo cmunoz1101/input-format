@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "inputField": {},
+        "possibleValue": "VALUE1"
+    },
+    {
+        "id": 2,
+        "inputField": {},
+        "possibleValue": "VALUE2"
+    },
+    {
+        "id": 3,
+        "inputField": {},
+        "possibleValue": "VALUE3"
+    }
+]

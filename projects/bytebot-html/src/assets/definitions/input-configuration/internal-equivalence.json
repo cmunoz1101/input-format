@@ -1,0 +1,80 @@
+{
+    "name": "internal-equivalence",
+    "fieldToShowInAction": "id",
+    "recordId": "id",
+    "showFormIn": "standard",
+    "attributes": [
+        {
+            "name": "id",
+            "type": "number",
+            "formOptions": {
+                "options": {
+                    "hideInNew": true
+                },
+                "validators": [],
+                "controlType": "number"
+            }
+        },
+        {
+            "name": "value",
+            "type": "string",
+            "formOptions": {
+                "options": {
+                    "styleClass": "col-xs-3 col-sm-6 col-md-6",
+                    "showLength": true,
+                    "maxLength": 1000
+                },
+                "validators": [
+                    "required"
+                ],
+                "controlType": "text"
+            }
+        },
+        {
+            "name": "equivalence",
+            "type": "string",
+            "formOptions": {
+                "options": {
+                    "styleClass": "col-xs-3 col-sm-6 col-md-6",
+                    "showLength": true,
+                    "maxLength": 1000
+                },
+                "validators": [
+                    "required"
+                ],
+                "controlType": "text"
+            }
+        }
+    ],
+    "groups": [],
+    "grid": [
+        {
+            "sortColumnDefault": "id",
+            "sortColumnDirection": "asc",
+            "pagingSize": 5,
+            "expandRow": false,
+            "columns": [
+                {
+                    "name": "value",
+                    "sortable": true,
+                    "style": {
+                        "max-width": "100px",
+                        "width": "100px"
+                    },
+                    "optional": false,
+                    "filter": true
+                },
+                {
+                    "name": "equivalence",
+                    "sortable": true,
+                    "style": {
+                        "max-width": "100px",
+                        "width": "100px"
+                    },
+                    "optional": false,
+                    "filter": true
+                }
+            ]
+        }
+    ]
+}

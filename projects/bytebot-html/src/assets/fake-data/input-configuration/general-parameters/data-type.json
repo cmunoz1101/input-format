@@ -1,0 +1,4 @@
+{
+    "id": "input-format-data-type",
+    "value": "[{\"id\":\"01\",\"name\":\"STRING\"},{\"id\":\"02\",\"name\":\"LONG\"},{\"id\":\"03\",\"name\":\"DECIMAL\"},{\"id\":\"04\",\"name\":\"INT\"},{\"id\":\"05\",\"name\":\"DATE\"},{\"id\":\"06\",\"name\":\"DATETIME\"}]"
+}

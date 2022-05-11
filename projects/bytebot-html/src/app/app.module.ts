@@ -42,6 +42,7 @@ import { CustomProgramsFakeBackendInterceptor } from './interceptors/custom-prog
 import { AgentFakeBackendInterceptor } from './interceptors/agent-fake-backend.interceptor';
 import { OperativeDashboardFakeBackendInterceptor } from './interceptors/operative-dashboard-fake-backend.interceptor';
 import { CustomErrorHandlerInterceptor } from './interceptors/custom-error-handler.interceptor';
+import { InputConfigurationFakeBackendInterceptor } from './interceptors/input-configuration-fake-backend.interceptor';
 
 const INITIAL_LANGUAGE = 'es';
 
@@ -129,6 +130,7 @@ export function createTranslateLoader(http: HttpClient) {
     { provide: HTTP_INTERCEPTORS, useClass: CustomProgramsFakeBackendInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AgentFakeBackendInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: OperativeDashboardFakeBackendInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: InputConfigurationFakeBackendInterceptor, multi: true },
 
 
     { provide: APP_INITIALIZER, useFactory: init_app, deps: [InitCommonsService, TranslateService], multi: true }

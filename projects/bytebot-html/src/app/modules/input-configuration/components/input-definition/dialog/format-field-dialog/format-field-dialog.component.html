@@ -1,0 +1,79 @@
+<div class="popup-general">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="popup-title">
+                <img src="{{ logoSrc }}" with="25" height="25">
+                <span class="header-popup-text">{{ title | translate }}</span>
+
+                <div class="pull-right">
+                    <button type="button" class="close" (click)="close()">×</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <div>
+        <label>{{'label.format.field.dialog.decription' | translate}}:</label>
+    </div>
+
+    <br>
+
+    <form [formGroup]="form" name="form" autocomplete="off" novalidate (ngSubmit)="onSubmit()">
+
+        <div class="row" *ngIf="dataType === '05' || dataType === '06'">
+            <div class="form-group col-xl-6">
+                <xdf-input name="dateFormat" label="format.field.dateFormat.label" type="text" [required]="true"
+                    placeholder="format.field.dateFormat.placeholder" [formGroup]="form"
+                    [options]="{maxLength: 80, showLength: true}"></xdf-input>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="dataType === '03'">
+            <div class="form-group col-xl-6">
+                <xdf-input name="numberFormat" label="format.field.numberFormat.label" type="text" [required]="true"
+                    placeholder="format.field.numberFormat.placeholder" [formGroup]="form"
+                    [options]="{maxLength: 50, showLength: true}"></xdf-input>
+            </div>
+            <div class="form-group col-xl-6">
+                <xdf-input name="numberFormatDecimalSeparator" label="format.field.numberFormatDecimalSeparator.label"
+                    type="text" [required]="false" placeholder="format.field.numberFormatDecimalSeparator.placeholder"
+                    [formGroup]="form" [options]="{maxLength: 5, showLength: true}"></xdf-input>
+            </div>
+        </div>
+
+        <div class="row" style="align-items: baseline;" *ngIf="dataType === '02' || dataType === '03'">
+            <div class="form-group col-xl-6">
+                <xdf-input name="numberFormatGroupingSeparator" label="format.field.numberFormatGroupingSeparator.label"
+                    type="text" [required]="false" placeholder="format.field.numberFormatGroupingSeparator.placeholder"
+                    [formGroup]="form" [options]="{maxLength: 5, showLength: true}"></xdf-input>
+            </div>
+            <div class="form-group col-xl-6">
+                <xdf-checkbox [formGroup]="form" name="absolute" label="format.field.absolute.label"
+                    [disabled]="mode==='view'"></xdf-checkbox>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="border-top" style="padding-top: 20px;">
+                    <div class="pull-right">
+                        <button class="btn btn-light" mat-stroked-button (click)="close()" type="button"
+                            [disabled]="processing">
+                            <i class="fa fa-ban" aria-hidden="true"></i>&nbsp;{{ 'btn.cancel' | translate }}
+                        </button>
+                        <button class="btn btn-primary btn-save" mat-stroked-button
+                            [disabled]="form?.invalid || processing " type="submit">
+                            <i class="fa fa-save" aria-hidden="true"></i>&nbsp;{{'btn.save' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>

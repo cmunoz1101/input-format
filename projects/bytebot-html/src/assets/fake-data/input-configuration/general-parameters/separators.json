@@ -1,0 +1,4 @@
+{
+    "id": "input-format-separators",
+    "value": "[{\"id\":\"|\",\"name\":\"Tab\"},{\"id\":\";\",\"name\":\"Punto y coma\"},{\"id\":\",\",\"name\":\"Coma\"},{\"id\":\"o\",\"name\":\"Otro\"}]"
+}

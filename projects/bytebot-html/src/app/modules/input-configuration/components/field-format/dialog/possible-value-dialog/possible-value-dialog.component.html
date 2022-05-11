@@ -1,0 +1,125 @@
+<div class="popup-general">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="popup-title">
+                <img src="{{ logoSrc }}" with="25" height="25">
+                <span class="header-popup-text">{{ title | translate }}</span>
+
+                <div class="pull-right">
+                    <button type="button" class="close" (click)="onClose()">×</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <form [formGroup]="valuesFormGroup" (ngSubmit)="onSubmit()" (keydown.enter)="$event.preventDefault()">
+
+        <div>
+            <label>{{'label.possible.values.dialog.description' | translate}}:</label>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="form-group col-xl-6">
+                <div class="form-control-container list-container">
+                    <div class="row">
+                        <div class="todo-container col-xl-12">
+                            <div class="todo-list mat-elevation-z2">
+                                <div class="title-panel">
+                                    <div class="row" style="align-items: baseline;">
+                                        <div style="margin-left: 30px;">
+                                            <span>Lista de valores posibles</span>
+                                        </div>
+                                        <div class="ml-auto" style="margin-right: 60px;">
+                                            <button mat-icon-button style="margin-right: -100px;"
+                                                (click)="onNewRecord()" [disabled]="mode=='view' || displayForm"
+                                                type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="todo-list-content">
+                                    <mat-list role="list">
+                                        <mat-divider></mat-divider>
+                                        <div *ngFor="let item of inputFieldPossibleValueList; let i = index;">
+                                            <mat-list-item style="font-size: 14px;" role="listitem">
+                                                <div class="col-xl-12">
+                                                    <div class="row" style="align-items: baseline;">
+                                                        <div class="custom-text">
+                                                            <span matTooltip="{{item.possibleValue}}">{{ item.possibleValue }}</span>
+                                                        </div>
+                                                        <div class="ml-auto">
+                                                            <button style="margin-right: 5px;" mat-icon-button
+                                                                (click)="onEditRecord(i)" [disabled]="mode=='view' || displayForm"
+                                                                type="button">
+                                                                <i class="fa fa-pencil"></i>
+                                                            </button>
+                                                            <button style="margin-right: -15px;" mat-icon-button
+                                                                (click)="onDeleteRecord(i)"
+                                                                [disabled]="mode=='view' || displayForm" type="button">
+                                                                <i class="fa fa-times"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </mat-list-item>
+                                            <mat-divider></mat-divider>
+                                        </div>
+                                    </mat-list>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-xl-6" *ngIf="displayForm">
+                <div formArrayName="valuesArray"
+                    *ngFor="let valueFormGroup of valuesFormGroup.get('valuesArray')['controls']; let i = index;">
+                    <div [formGroupName]="i">
+                        <div *ngIf="i === indexSelected">
+                            <xdf-input name="value" label="possible.value.value.label" type="text" [required]="true"
+                                placeholder="possible.value.value.placeholder" [formGroup]="valueFormGroup"
+                                [options]="{maxLength: 80, showLength: true}"></xdf-input>
+                            <div class="row">
+                                <div class="ml-auto" style="margin-right: 14px; margin-top: 5px;">
+                                    <button class="btn btn-light" mat-stroked-button (click)="onCancel(i)" type="button"
+                                        [disabled]="processing">
+                                        <i class="fa fa-ban" aria-hidden="true"></i></button>
+                                    <button class="btn btn-primary" mat-stroked-button (click)="onSave(i)" type="button"
+                                        [disabled]="valueFormGroup?.invalid || processing">
+                                        <i class="fa fa-check" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="border-top" style="padding-top: 20px;">
+                    <div class="pull-right">
+                        <button class="btn btn-light" mat-stroked-button (click)="onClose()" type="button"
+                            [disabled]="processing">
+                            <i class="fa fa-ban" aria-hidden="true"></i>&nbsp;{{ 'btn.cancel' | translate }}
+                        </button>
+                        <button class="btn btn-primary btn-save" mat-stroked-button
+                            [disabled]="processing " type="onSubmit">
+                            <i class="fa fa-save" aria-hidden="true"></i>&nbsp;{{'btn.save' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
