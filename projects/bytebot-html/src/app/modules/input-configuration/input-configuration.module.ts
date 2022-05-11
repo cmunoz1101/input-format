@@ -25,11 +25,12 @@ import { LineSeparatorsResolver } from './resolvers/general-parameter/line-separ
 import { MaxRecordsResolver } from './resolvers/general-parameter/max-records.resolver';
 import { SeparatorsResolver } from './resolvers/general-parameter/separators.resolver';
 import { InternalEquivalenceResolver } from './resolvers/definition/internal-equivalence.resolver';
+import { GeneralFieldsFormComponent } from './components/input-definition/form/general-fields-form/general-fields-form.component';
 
 
 
 @NgModule({
-  declarations: [InputConfigurationDetailComponent, InputConfigurationComponent, FieldFormatComponent, InputDefinitionComponent, ResumeComponent, TestInputComponent, InputStructDialogComponent, ExtractFieldDialogComponent, FormatFieldDialogComponent, NewFieldDialogComponent, PossibleValueDialogComponent],
+  declarations: [InputConfigurationDetailComponent, InputConfigurationComponent, FieldFormatComponent, InputDefinitionComponent, ResumeComponent, TestInputComponent, InputStructDialogComponent, ExtractFieldDialogComponent, FormatFieldDialogComponent, NewFieldDialogComponent, PossibleValueDialogComponent, GeneralFieldsFormComponent],
   imports: [
     CommonModule,
     FormsModule,

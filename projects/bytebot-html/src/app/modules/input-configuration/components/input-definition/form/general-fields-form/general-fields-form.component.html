@@ -1,0 +1,125 @@
+<mat-card id="card" style="height: 100%; overflow: auto;">
+    <div>
+        <mat-card-content>
+
+            <form [formGroup]="form" name="form" autocomplete="off" (ngSubmit)="onSubmit()">
+
+                <div class="mail-box-header">
+                    <h3>{{ 'label.general-field.form.title' | translate }}</h3>
+                </div>
+
+                <div class="mail-box-content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-content">
+                                <div class="group-content">
+
+                                    <div class="row form-row-margin-top form-row-align">
+
+                                        <div class="form-group col-xl-4">
+                                            <mat-radio-button (change)="onChangeRB1()" [checked]="checkedRB1">
+                                                {{'general-field.form.detail.structureType1.label' |
+                                                translate}}
+                                            </mat-radio-button>
+                                        </div>
+
+                                        <div class="form-group col-xl-4 form-padding-right">
+                                            <xdf-input name="startRow" label="general-field.form.detail.startRow.label"
+                                                type="number" [required]="true"
+                                                placeholder="general-field.form.detail.startRow.placeholder"
+                                                [formGroup]="form">
+                                            </xdf-input>
+                                        </div>
+
+                                        <div class="form-group col-xl-4 form-padding-right">
+                                            <xdf-select label="general-field.form.detail.dataFileConverter.label"
+                                                name="dataFileConverter" [values]="convertFile" [required]="false"
+                                                placeholder="general-field.form.detail.dataFileConverter.placeholder"
+                                                [disabled]="mode==='view'" [formGroup]="form"
+                                                [options]="{sourceValue: 'id', sourceLabel: 'name'}">
+                                            </xdf-select>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row form-row-margin-top form-row-align form-row-margin-bottom">
+
+                                        <div class="form-group col-xl-4">
+
+                                            <div class="row form-row-align">
+
+                                                <div class="col-xl-3" style="margin-right: 50px;">
+                                                    <mat-radio-button (change)="onChangeRB2()" [checked]="checkedRB2">
+                                                        {{'general-field.form.detail.structureType2.label' |
+                                                        translate}}
+                                                    </mat-radio-button>
+                                                </div>
+                                                <div class="col-xl-4" style="margin-right: -10px;">
+                                                    <xdf-select id="separator"
+                                                        label="general-field.form.detail.separator.label"
+                                                        name="separator" [values]="separators" [required]="true"
+                                                        placeholder="general-field.form.detail.separator.placeholder"
+                                                        [disabled]="mode==='view'" [formGroup]="form"
+                                                        [options]="{sourceValue: 'id', sourceLabel: 'name'}"
+                                                        (onChangeSelected)="onChangeSeparator($event)">
+                                                    </xdf-select>
+                                                </div>
+                                                <div class="col-xl-2">
+                                                    <mat-form-field style="width: 100%;" appearance="legacy">
+                                                        <mat-label>{{ 'general-field.form.detail.otherSeparator.label' |
+                                                            translate }}
+                                                        </mat-label>
+                                                        <div [formGroup]="form">
+                                                            <input id="otherSeparator" [required]="true"
+                                                                name="otherSeparator" formControlName="otherSeparator"
+                                                                matInput type="text" />
+                                                        </div>
+                                                        <mat-error
+                                                            *ngIf="form.controls.otherSeparator.errors?.required && form.controls.otherSeparator.touched">
+                                                            {{
+                                                            'general-field.form.detail.otherSeparator.required.message'
+                                                            |
+                                                            translate }}
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group col-xl-4">
+                                            <xdf-checkbox [formGroup]="form" name="includeFieldNames"
+                                                label="general-field.form.detail.includeFieldNames.label">
+                                            </xdf-checkbox>
+                                        </div>
+
+                                        <div class="form-group col-xl-4">
+                                            <xdf-checkbox [formGroup]="form" name="autoTrim"
+                                                label="general-field.form.detail.autoTrim.label">
+                                            </xdf-checkbox>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px; float: right;">
+                    <div class="col-lg-12" *ngIf="mode !== 'view'">
+                        <div class="form-status-bar border-top">
+                            <button type="submit" mat-stroked-button class="btn btn-primary" [disabled]="form?.invalid 
+                          || processing ">
+                                <i class="fa fa-save" aria-hidden="true"></i>{{'btn.save' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </div>
+</mat-card>
